@@ -191,97 +191,6 @@ message.channel.sendEmbed(embed)
   };
   });
 
-
-
-
-client.on("message", message => {
-if (message.content === ("/ac1")) {
-let channel = message.client.channels.find('name', "✥ TDN Members ⇝ ");
-let muteRole = client.guilds.get(message.guild.id).channels.find('name', '✥ TDN Members ⇝ ');
-if (!muteRole) return message.reply("** قم بإنشآء الرومات اولا عن طريق الامر R-Ch **").catch(console.error);
-if(!message.channel.guild) return message.reply('**Commands in the server**');
-if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
-channel.edit({name : `memberCount「${message.guild.memberCount}」`});
-message.channel.sendMessage("تم تفعيل الروم بنجاح")
-      
-  }
-});
-
-
-client.on("message", message => {
-  if (message.content === ("/ac2")) {
-          let channel = message.client.channels.find('name', "✥ TDN hour ⇝ ");
-           let muteRole = client.guilds.get(message.guild.id).channels.find('name', '✥ TDN hour ⇝ ');
-  if (!muteRole) return message.reply("** قم بإنشآء الرومات اولا عن طريق الامر /Ch **").catch(console.error);
-             if(!message.channel.guild) return message.reply('**Commands in the server**');
-	                         if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
-              var currentTime = new Date(),
-            hours = currentTime.getHours() + 3 ,
-            minutes = currentTime.getMinutes(),
-            seconds = currentTime.getSeconds(),
-            years = currentTime.getFullYear(),
-            month = currentTime.getMonth() + 3,
-            day = currentTime.getDate(),
-            week = currentTime.getDay();
-           
- 
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            var suffix = "AM";
-            if (hours >= 12) {
-                suffix = "PM";
-                hours = hours - 12;
-            }
-            if (hours == 0) {
-                hours = 12;
-            }
-    channel.edit({name : "🕐 - Time   「" + hours + ":" + minutes  +" " + suffix + "」"});
-  message.channel.sendMessage("تم تفعيل الروم بنجاح");
-  }
-});
-client.on("message", message => {
-    if (message.content === ("/ac3")) {
-          let muteRole = client.guilds.get(message.guild.id).channels.find('name', '✥ TDN date ⇝ ');
-  if (!muteRole) return message.reply("** قم بإنشآء الرومات اولا عن طريق الامر /Ch **").catch(console.error);
-           
-                   if(!message.channel.guild) return message.reply('**Commands in the server**');
-	        if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**أنت ليس لديك برمشن** `ADMINISTRATOR`' );
-            
-          let channel = message.client.channels.find('name', "✥ TDN date ⇝ ");
-              var currentTime = new Date(),
-            years = currentTime.getFullYear(),
-            month = currentTime.getMonth() + 1,
-            day = currentTime.getDate(),
-            week = currentTime.getDay();
-   
-    channel.edit({name : "📅 - Date " + "「" + day + "-" + month + "-" + years + "」"});
-message.channel.sendMessage("Done");
-}
-});
-
-
-
-client.on("message", (message) => {
-if (message.content === ("/Ch")) {
-if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send("**أنت ليس لديك برمشن** `ADMINISTRATOR`" );
-	      if(!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return message.reply("**يحتاج البوت الى خاصية` MANAGE_CHANNELS ` **").then(msg => msg.delete(6000))
-
-    message.guild.createChannel('✥ TDN hour ⇝ ', 'voice');
-    message.guild.createChannel('✥ TDN date ⇝ ', 'voice');
-    message.guild.createChannel('✥ TDN Members ⇝ ', 'voice');
-message.channel.sendMessage('**تم إنشاء روم ساعة :small_orange_diamond:**');
-message.channel.sendMessage('**تم إنشاء روم تاريخ :small_orange_diamond:**');
-message.channel.sendMessage('**تم إنشاء روم عداد الأعضآء :small_orange_diamond:**');
-message.reply ("لتفعيل الرومات اكتب `R-Ch ac`");  
-}
-});
-
-
-
-
-
-
 client.on('message', message => { 
     var prefix = "/";
  let args = message.content.split(' ').slice(1);
@@ -298,13 +207,6 @@ client.on('message', message => {
         });
 }
 });
-
-
-
-
-
-
-
 
  client.on('message', message => {
 if(message.content.startsWith(prefix +'sug')) {
@@ -527,7 +429,20 @@ client.on('message', message=> {
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**☆ OHH HI I'AM "HIROKA" BOT (✿◠‿◠) MADE BY : - :flag_tn: "THE RARE RANGER" :flag_tn: - TO MAKE - TDN MEMBERS - HAPPY ^^ , SO BE COOL TO OTHER MEMBERS ! BECAUSE I HAVE THE PERMISSIONS TO KICK AND BAN SO BE CAREFUL. , AND YEAH WAIT : "5 - MINUTES" TO GET YOUR ROLE - HAVE FUN ^^ , BYEE ☆** :heart:`)
+  return channel.send(`
+**・。・゜★・。・。☆・゜・。・゜。・。・゜★・。・。☆
+ :flag_tn: The Grid™ - Official Server :flag_tn:
+・。・゜★・。・。☆・゜・。・゜。・。・゜★・。・。☆
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+
+● Welcome User :wave: ,We Glad To Have You In Our The Grid™ - Official Server . :fire: 
+● Yoo If You Invite 10 Member To Our Server You Will Get Your : V.I.P  - Role With Many Futures CMD and More Fun . :heart: 
+● And Yeah Don't Forget To READ Our Server Rules In : #Read-Me To Avoid BAN / KICK . :sunglasses: ! 
+● If You Have Question Or Need Any Help Please PM : The Grid™ - Official Owners. :thumbsup:
+● So Enjoy And Have Fun ,Stay Clean Boooyyy . :thumb
+
+╚═══════════════════════════════════════════════════════════════════════════╝**`)
 }).catch(console.error)
 })
 
