@@ -26,8 +26,22 @@ spee={};
 
 
 client.on('ready', () => {
-     client.user.setStatus("dnd")
-     client.user.setGame(`★ TDN™ ❘ SYSTEM ★`,`https://www.twitch.tv/TheRealPredvkill`);
+     client.on('ready', function(){
+  client.user.setStatus("dnd");
+    var ms = 10000 ;
+    var setGame = ['★ TG | System ★','The Grid™ | Server ' ];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
+    }, ms);
 });
 
 
@@ -45,21 +59,13 @@ client.on("message", message => {
       }).then(collected => {
         message.delete();
         m.delete();
-        message.member.addRole(message.guild.roles.find(c => c.name == "• TDN » Gaming"));
+        message.member.addRole(message.guild.roles.find(c => c.name == "• TG » Gaming"));
       }).catch(() => {
         m.edit(`You took to long to type the number.\nRe-type the command again if you want to verify yourself.`).then(m2 => m.delete(15000));
       });
     });
   }
 });
-
-
-
-
-
-
-
-
 
 
 client.on('message', message => {                      
@@ -81,7 +87,7 @@ client.on('message', message => {
      
                                                        
                                active.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "• TDN » Verify"));
+                                   message.member.addRole(message.guild.roles.find("name", "• TG » Verify"));
                                    message.member.removeRole(message.guild.roles.find("name", "⇌ Member Not Verify"));
                                    msg.delete();
                                    message.channel.send(`**You have been activated.**`).then(m => m.delete(1000));
@@ -227,7 +233,7 @@ if(!message.guild.channels.find("name","suggestions")) return message.channel.se
       .setColor('WHITE')
    .setTitle(`Are you sure you send the proposal? You have a minute before canceling.`)               
 .setDescription(`Suggestion : **${a8tra7}**`)
-		 .setFooter('TDN Games' , client.user.avatarURL)
+		 .setFooter('TG Games' , client.user.avatarURL)
 message.channel.sendEmbed(Sure).then(msg => {
     msg.react('❎')
 .then(() => msg.react('✅'))
@@ -439,6 +445,7 @@ client.on("guildMemberAdd", member => {
 ● Welcome User :wave: ,We Glad To Have You In Our The Grid™ - Official Server . :fire: 
 ● Yoo If You Invite 10 Member To Our Server You Will Get Your : V.I.P  - Role With Many Futures CMD and More Fun . :heart: 
 ● And Yeah Don't Forget To READ Our Server Rules In : #Read-Me To Avoid BAN / KICK . :sunglasses: ! 
+● :fire: Chose Your Role Here : #self-roles :fire:.
 ● If You Have Question Or Need Any Help Please PM : The Grid™ - Official Owners. :thumbsup:
 ● So Enjoy And Have Fun ,Stay Clean Boooyyy . :thumb
 
@@ -1297,7 +1304,7 @@ msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?c
 });
 
     client.on('voiceStateUpdate', (old, now) => {
-    const channel = client.channels.get('530640160166117386');
+    const channel = client.channels.get('542094021699436551');
     const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
     const size = channel.name.match(/\[\s(\d+)\s\]/);
     if (!size) return channel.setName(`Voice Online : [${currentSize}]`);
@@ -1317,7 +1324,7 @@ client.on('message', async message => {
             text = co.first().content
 
               message.channel.send(`Done`)
-                client.channels.get("529660172587499546").send(`${message.author.username}'s said => ${text}`)
+                client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
 
               })
             }
