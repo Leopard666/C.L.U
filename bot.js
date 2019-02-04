@@ -25,8 +25,7 @@ ti={}
 spee={};
 
 
-client.on('ready', () => {
-     client.on('ready', function(){
+  client.on('ready', function(){
   client.user.setStatus("dnd");
     var ms = 10000 ;
     var setGame = ['★ TG | System ★','The Grid™ | Server ' ];
