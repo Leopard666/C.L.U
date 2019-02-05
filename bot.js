@@ -1333,8 +1333,9 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-        .setTitle(`:arrow_right: :notes: Click Here To Invite Quorra RainBow Bot :notes: :arrow_left:`)
-        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
+  .setDescription(`**
+  arrow_right: :notes: Click Here To Invite Quorra RainBow Bot :notes: :arrow_left:
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) **`);
      message.channel.sendEmbed(embed);
 	   
        }
@@ -1361,9 +1362,9 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖  
 
-:hearts: [❖═════ المزيد قريبا ان شاء الله! ═══════❖] :hearts: 
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
-:zap: ─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─ :zap:
+:zap: ●─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─● :zap:
 
 ● The Grid™ - Official :copyright: **`);
 message.author.sendEmbed(embed)
