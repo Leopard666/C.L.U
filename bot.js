@@ -44,7 +44,37 @@ spee={};
 });
 
 
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "invite") {
+    
+   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**
+:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
+  
+❖═════════════════════════════════════❖  
 
+● :one: - :rainbow: : ${prefix}invite-quorra :arrow_right: To Invite Quorra RainBow Bot ●
+
+● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
+
+● :books: - : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+
+❖═════════════════════════════════════❖  
+
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
+
+:zap: ●─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─● :zap:
+
+● The Grid™ - Official :copyright: **`);
+
+message.author.sendEmbed(embed)
+
+  }
+});
 
 client.on("message", message => {
   if(message.content.startsWith("/gaming")) {
@@ -1339,40 +1369,6 @@ client.on('message', message => {
 	   
        }
    });
-
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "invite") {
-    
-   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
-   const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
-  .setColor('RANDOM')
-  .setDescription(`**
-:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
-  
-❖═════════════════════════════════════❖  
-
-● :one: - :rainbow: : ${prefix}invite-quorra :arrow_right: To Invite Quorra RainBow Bot ●
-
-● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
-
-● :books: - : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
-
-❖═════════════════════════════════════❖  
-
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ●─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─● :zap:
-
-● The Grid™ - Official :copyright: **`);
-
-message.author.sendEmbed(embed)
-
-  }
-});
-
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
