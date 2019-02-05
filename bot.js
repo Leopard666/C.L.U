@@ -1340,6 +1340,7 @@ client.on('message', message => {
        }
    });
 
+
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite") {
@@ -1349,7 +1350,7 @@ client.on('message', message => {
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setDescription(`**
-:fire: [❖══ ● THE GRID™ BOT LIST & COMMANDS FOR INVITE ● ══❖] :fire:   
+:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
   
 ❖═════════════════════════════════════❖  
 
@@ -1366,10 +1367,11 @@ client.on('message', message => {
 :zap: ●─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─● :zap:
 
 ● The Grid™ - Official :copyright: **`);
-message.author.sendEmbed(embed);
 
+message.author.sendEmbed(embed)
   }
 });
+
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
@@ -1386,10 +1388,6 @@ client.on('message', async message => {
               })
             }
           })
-
-client.on('ready', () => {
-    client.user.setStatus("dnd");
- 
  });
 
 client.login(process.env.BOT_TOKEN);
