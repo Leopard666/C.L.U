@@ -1284,7 +1284,6 @@ client.on('message', message => {
 
 client.on('message', msg => {
     if(msg.content.startsWith('/bot')) {
-    if(message.author.id !== "480540559233122324") return message.reply('هذا الأمر قفط لصاحب البوت و شكراًً');
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**Name Of bot ?**' + '``')
@@ -1334,7 +1333,6 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-   if(message.author.id !== "480540559233122324") return message.reply('● هذا الأمر قفط لصاحب البوت و شكراًً ●'); 
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
