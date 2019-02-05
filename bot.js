@@ -1333,8 +1333,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setDescription(`**
-  arrow_right: :notes: Click Here To Invite Quorra RainBow Bot :notes: :arrow_left:
+  .setTitle(`:arrow_right: :rainbow: Click Here To Invite Rinzler Music Bot :rainbow: :arrow_left:`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) **`);
      message.channel.sendEmbed(embed);
 	   
@@ -1358,7 +1357,7 @@ client.on('message', message => {
 
 ● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
 
-● :books: : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+● :books: - : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
 
 ❖═════════════════════════════════════❖  
 
@@ -1367,7 +1366,8 @@ client.on('message', message => {
 :zap: ●─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─● :zap:
 
 ● The Grid™ - Official :copyright: **`);
-message.author.sendEmbed(embed)
+message.author.sendEmbed(embed);
+
   }
 });
 
