@@ -26,33 +26,10 @@ spee={};
 
 client.on('message' , message => {
 if(message.content === 'help') {
+if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(":x: You Don't Have `MANAGE CHANNELS` Premissions :x:");
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
-message.author.send(`
-*** :beginner: وصف عن البوت :beginner: ***
-**
-─════════════ {✯ اوامر البوت ✯} ════════════─
-❧ bc ➺ برودكاست ب امبيد وبدون
-❧ Link ➺ رابط انفايت للسيرفر
-❧ clear ➺ مسح الشات
-❧ server ➺ لعرض معلومات السيرفر
-❧ mc ➺ قفل الشات
-❧ umc ➺ فتح الشات
-❧ report ➺ تبليغ / لازم في روم اسمه repoerts
-❧ avatar ➺ عرض صورتك او شخص تمنشنه
-❧ ct ➺ انشاء روم كتابي
-❧ cv ➺ انشاء روم صوتي
-❧ move ➺ سحب عضو للروم الصوتي
-❧ ban ➺ تبنيد عضو من السيرفر
-❧ kick ➺ طرد عضو من السيرفر
-❧ mute ➺ اعطاء ميوت كتابي
-❧ unmute ➺ فك الميوت الكتابي
-❧ roles ➺ لعرض الرتب الموجودة في السيرفر
-❧ say ➺ البوت يكرر كلام انته تحدده
-❧ id ➺ لعرض معلوماتك
-● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
-─════════════ {✯ THE GRID™ BOT ✯} ════════════─
-**
+message.author.send(`**:x: COMMANDS ONLy FOR BOT OWNER :x:**
 `);
 }
 })
