@@ -24,42 +24,38 @@ const prefix = '/'
 ti={}  
 spee={};
 
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help") {
-   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
-   const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
+client.on('message' , message => {
+if(message.content === 'help') {
+  var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setDescription(`**
-:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST ● ══❖] :fire:   
-  
-─════════════   :beginner:  {✯اوامر    البوت✯} :beginner:   ════════════─
-
-❧    bc    ➺    برودكاست    ب    امبيد    وبدون
-❧    Link    ➺    رابط    انفايت    للسيرفر
-❧    clear    ➺    مسح    الشات
-❧    server    ➺    لعرض    معلومات    السيرفر
-❧    mc    ➺    قفل    الشات
-❧    umc    ➺    فتح    الشات
-❧    report    ➺    تبليغ    /    لازم    في    روم    اسمه    repoerts
-❧    avatar    ➺    عرض    صورتك    او    شخص    تمنشنه
-❧    ct    ➺    انشاء    روم    كتابي
-❧    cv    ➺    انشاء    روم    صوتي                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ❧    move    ➺    سحب    عضو    للروم    الصوتي
-❧    ban    ➺    تبنيد    عضو    من    السيرفر
-❧    kick    ➺    طرد    عضو    من    السيرفر
-❧    mute    ➺    اعطاء    ميوت    كتابي
-❧    unmute    ➺    فك    الميوت    الكتابي
-❧    roles    ➺    لعرض    الرتب    الموجودة    في    السيرفر
-❧    say    ➺    البوت    يكرر    كلام    انته    تحدده
-
+message.author.send(`
+*** :beginner: وصف عن البوت :beginner: ***
+**
+─════════════ {✯ اوامر البوت ✯} ════════════─
+❧ bc ➺ برودكاست ب امبيد وبدون
+❧ Link ➺ رابط انفايت للسيرفر
+❧ clear ➺ مسح الشات
+❧ server ➺ لعرض معلومات السيرفر
+❧ mc ➺ قفل الشات
+❧ umc ➺ فتح الشات
+❧ report ➺ تبليغ / لازم في روم اسمه repoerts
+❧ avatar ➺ عرض صورتك او شخص تمنشنه
+❧ ct ➺ انشاء روم كتابي
+❧ cv ➺ انشاء روم صوتي
+❧ move ➺ سحب عضو للروم الصوتي
+❧ ban ➺ تبنيد عضو من السيرفر
+❧ kick ➺ طرد عضو من السيرفر
+❧ mute ➺ اعطاء ميوت كتابي
+❧ unmute ➺ فك الميوت الكتابي
+❧ roles ➺ لعرض الرتب الموجودة في السيرفر
+❧ say ➺ البوت يكرر كلام انته تحدده
+❧ id ➺ لعرض معلوماتك
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
-
-─════════════  :beginner:  {✯ THE GRID™ BOT ✯} :beginner:  ════════════─ **`);
-message.author.sendEmbed(embed)
-
-       }
-   });
+─════════════ {✯ THE GRID™ BOT ✯} ════════════─
+**
+`);
+}
+})
 
   client.on('ready', function(){
   client.user.setStatus("dnd");
