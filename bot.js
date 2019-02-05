@@ -1311,9 +1311,13 @@ msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?c
 });
 
 client.on('message', message => {
-        if (message.content === prefix + "Invite") {
-            if(!message.channel.guild) return;
-        let embed = new Discord.RichEmbed()
+  if (message.author.bot) return;
+   if (message.content === prefix + "invite") {
+    
+   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
         .setTitle(`:arrow_right: :one: Click Here To Invite Quorra RainBow Bot :arrow_left:`)
         .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
         .setTitle(`:arrow_right: :two: Click Here To Invite Rinzler Music Bot Bot :arrow_left:`)
