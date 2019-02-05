@@ -1314,7 +1314,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-quorra") {
     
-   message.channel.send('**● :rainbow: QUORRA RIANBOW BOT :rainbow: ●**');
+   message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
@@ -1329,7 +1329,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-rinzler") {
     
-   message.channel.send('**● :headphones: RINZLER MUSIC BOT :headphones: ●**');
+   message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
@@ -1349,15 +1349,17 @@ client.on('message', message => {
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setDescription(`**
-:fire: [❖═════ ● THE GRID™ BOT LIST & COMMANDS FOR INVITE ● ═══════❖] :fire:   
+:fire: [❖══ ● THE GRID™ BOT LIST & COMMANDS FOR INVITE ● ══❖] :fire:   
   
 ❖═════════════════════════════════════❖  
 
-● :rainbow: ${prefix}invite-quorra :arrow_right: To Invite Quorra RainBow Bot ●
+● :one: - :rainbow: : ${prefix}invite-quorra :arrow_right: To Invite Quorra RainBow Bot ●
 
-● :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
+● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+
+❖═════════════════════════════════════❖  
 
 :hearts: [❖═════ المزيد قريبا ان شاء الله! ═══════❖] :hearts: 
 
