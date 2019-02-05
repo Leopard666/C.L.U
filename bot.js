@@ -55,18 +55,7 @@ client.on('message', message => {
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
-─════════════  :beginner:  {✯ THE GRID™ BOT ✯} :beginner:  ════════════─
-
-❖═════════════════════════════════════❖  
-
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ─═════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═════─ :zap:
-
-❖═════════════════════════════════════❖  
-
-● The Grid™ - Official :copyright: **`);
-
+─════════════  :beginner:  {✯ THE GRID™ BOT ✯} :beginner:  ════════════─ **`);
 message.author.sendEmbed(embed)
 
        }
