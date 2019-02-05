@@ -1369,6 +1369,7 @@ client.on('message', message => {
 ● The Grid™ - Official :copyright: **`);
 
 message.author.sendEmbed(embed)
+
   }
 });
 
@@ -1383,11 +1384,15 @@ client.on('message', async message => {
             text = co.first().content
 
               message.channel.send(`Done`)
-                client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
+                client.channels.get("541630106209091587").send(`${message.author.username}'s said => ${text}`)
 
               })
             }
           })
+
+client.on('ready', () => {
+    client.user.setStatus("dnd");
+ 
  });
 
 client.login(process.env.BOT_TOKEN);
