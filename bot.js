@@ -330,7 +330,7 @@ client.on('guildMemberAdd', (member) => {
   if (message.content.startsWith('/report')) {
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
-        let modlog = client.channels.find('name', '☸「reports」');
+        let modlog = client.channels.find('name', 'reports');
         if (!reason) return message.reply(':hearts:');
           if (message.mentions.users.size < 1) return message.reply('**You must Montion the member to be reported**').catch(console.error);
    
@@ -424,7 +424,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply(" **How can I help you !** ");
+    message.reply(" **How can I help you ?** ");
     }
 });
 
@@ -439,7 +439,6 @@ client.on("guildMemberAdd", member => {
 ╔═══════════════════════════════════════════════════════════════════════════╗
 
 ● Welcome User :wave: ,We Glad To Have You In Our The Grid™ - Official Server . :fire: 
-● Yoo If You Invite 10 Member To Our Server You Will Get Your : V.I.P  - Role With Many Futures CMD and More Fun . :heart: 
 ● And Yeah Don't Forget To READ Our Server Rules In : #Read-Me To Avoid BAN / KICK . :sunglasses: ! 
 ● :fire: Chose Your Role Here : #self-roles :fire:.
 ● If You Have Question Or Need Any Help Please PM : The Grid™ - Official Owners. :thumbsup:
@@ -1265,11 +1264,6 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(15000)})
 })
 
 
-
-
-
-
-
 client.on('message', message => {
     if (message.content.startsWith(prefix + "avatar")) {
         var mentionned = message.mentions.users.first();
@@ -1288,14 +1282,14 @@ client.on('message', message => {
 });
 
 
-
 client.on('message', msg => {
     if(msg.content.startsWith('/bot')) {
+    if(message.author.id !== "480540559233122324") return message.reply('You aren\'t the bot owner.');
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**Name Of bot ?**' + '``')
 if(!user.bot) return msg.reply('\`Montion Bot\`');
-msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
+msg.channel.send(`**C.L.U Bot InviteURL : ** https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`)
     }
 });
 
@@ -1342,7 +1336,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite") {
     
-   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
@@ -1369,7 +1363,6 @@ message.author.sendEmbed(embed)
 
   }
 });
-
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
