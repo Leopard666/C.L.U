@@ -1284,7 +1284,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
     if(msg.content.startsWith('/bot')) {
-    if(message.author.id !== "480540559233122324") return message.reply('You aren\'t the bot owner.');
+    if(message.author.id !== "480540559233122324") return message.reply('هذا الأمر قفط لصاحب البوت و شكراًً');
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**Name Of bot ?**' + '``')
@@ -1309,7 +1309,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`:arrow_right: :rainbow: Click Here To Invite Quorra RainBow Bot :rainbow: :arrow_left:`)
+  .setTitle(`:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 
@@ -1324,13 +1324,61 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`:arrow_right: :rainbow: Click Here To Invite Rinzler Music Bot :rainbow: :arrow_left:`)
+  .setTitle(`:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) 
      message.channel.sendEmbed(embed);
 	   
        }
    });
 
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+   if(message.author.id !== "480540559233122324") return message.reply('● هذا الأمر قفط لصاحب البوت و شكراًً ●'); 
+   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**
+:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST ● ══❖] :fire:   
+  
+─════════════   :beginner:  {✯اوامر    البوت✯} :beginner:   ════════════─
+
+❧    bc    ➺    برودكاست    ب    امبيد    وبدون
+❧    Link    ➺    رابط    انفايت    للسيرفر
+❧    clear    ➺    مسح    الشات
+❧    server    ➺    لعرض    معلومات    السيرفر
+❧    mc    ➺    قفل    الشات
+❧    umc    ➺    فتح    الشات
+❧    report    ➺    تبليغ    /    لازم    في    روم    اسمه    repoerts
+❧    avatar    ➺    عرض    صورتك    او    شخص    تمنشنه
+❧    ct    ➺    انشاء    روم    كتابي
+❧    cv    ➺    انشاء    روم    صوتي                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ❧    move    ➺    سحب    عضو    للروم    الصوتي
+❧    ban    ➺    تبنيد    عضو    من    السيرفر
+❧    kick    ➺    طرد    عضو    من    السيرفر
+❧    mute    ➺    اعطاء    ميوت    كتابي
+❧    unmute    ➺    فك    الميوت    الكتابي
+❧    roles    ➺    لعرض    الرتب    الموجودة    في    السيرفر
+❧    say    ➺    البوت    يكرر    كلام    انته    تحدده
+
+● :books: - : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
+
+─════════════  :beginner:  {✯ THE GRID™ BOT ✯} :beginner:  ════════════─
+
+❖═════════════════════════════════════❖  
+
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
+
+:zap: ─═════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═════─ :zap:
+
+❖═════════════════════════════════════❖  
+
+● The Grid™ - Official :copyright: **`);
+
+message.author.sendEmbed(embed)
+
+       }
+   });
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -1349,7 +1397,7 @@ client.on('message', message => {
 
 ● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
 
-● :books: - : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+● :books: - : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
 ❖═════════════════════════════════════❖  
 
@@ -1374,7 +1422,7 @@ client.on('message', async message => {
             text = co.first().content
 
               message.channel.send(`Done`)
-                client.channels.get("541630106209091587").send(`${message.author.username}'s said => ${text}`)
+                client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
 
               })
             }
