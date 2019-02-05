@@ -1310,8 +1310,17 @@ msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?c
     if (currentSize !== size) channel.setName(`Voice Online : [${currentSize}]`);
 });
 
-
-
+client.on('message', message => {
+        if (message.content === prefix + "Invite") {
+            if(!message.channel.guild) return;
+        let embed = new Discord.RichEmbed()
+        .setTitle(`:arrow_right: :one: Click Here To Invite Quorra RainBow Bot :arrow_left:`)
+        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
+        .setTitle(`:arrow_right: :two: Click Here To Invite Rinzler Music Bot Bot :arrow_left:`)
+        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
+     message.channel.sendEmbed(embed);
+       }
+   });
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
