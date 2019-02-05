@@ -1332,54 +1332,6 @@ client.on('message', message => {
 
 client.on('message', message => {
   if (message.author.bot) return;
-   if (message.content === prefix + "help") {
-   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
-   const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
-  .setColor('RANDOM')
-  .setDescription(`**
-:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST ● ══❖] :fire:   
-  
-─════════════   :beginner:  {✯اوامر    البوت✯} :beginner:   ════════════─
-
-❧    bc    ➺    برودكاست    ب    امبيد    وبدون
-❧    Link    ➺    رابط    انفايت    للسيرفر
-❧    clear    ➺    مسح    الشات
-❧    server    ➺    لعرض    معلومات    السيرفر
-❧    mc    ➺    قفل    الشات
-❧    umc    ➺    فتح    الشات
-❧    report    ➺    تبليغ    /    لازم    في    روم    اسمه    repoerts
-❧    avatar    ➺    عرض    صورتك    او    شخص    تمنشنه
-❧    ct    ➺    انشاء    روم    كتابي
-❧    cv    ➺    انشاء    روم    صوتي                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ❧    move    ➺    سحب    عضو    للروم    الصوتي
-❧    ban    ➺    تبنيد    عضو    من    السيرفر
-❧    kick    ➺    طرد    عضو    من    السيرفر
-❧    mute    ➺    اعطاء    ميوت    كتابي
-❧    unmute    ➺    فك    الميوت    الكتابي
-❧    roles    ➺    لعرض    الرتب    الموجودة    في    السيرفر
-❧    say    ➺    البوت    يكرر    كلام    انته    تحدده
-
-● :books: - : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
-
-─════════════  :beginner:  {✯ THE GRID™ BOT ✯} :beginner:  ════════════─
-
-❖═════════════════════════════════════❖  
-
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ─═════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═════─ :zap:
-
-❖═════════════════════════════════════❖  
-
-● The Grid™ - Official :copyright: **`);
-
-message.author.sendEmbed(embed)
-
-       }
-   });
-
-client.on('message', message => {
-  if (message.author.bot) return;
    if (message.content === prefix + "invite") {
     
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
@@ -1395,7 +1347,7 @@ client.on('message', message => {
 
 ● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
 
-● :books: - : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
+● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
 ❖═════════════════════════════════════❖  
 
