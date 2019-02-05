@@ -43,39 +43,6 @@ spee={};
     }, ms);
 });
 
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "invite") {
-    
-   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
-   const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
-  .setColor('RANDOM')
-  .setDescription(`**
-:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
-  
-❖═════════════════════════════════════❖  
-
-● :one: - :rainbow: : ${prefix}invite-quorra :arrow_right: To Invite Quorra RainBow Bot ●
-
-● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
-
-● :books: - : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
-
-❖═════════════════════════════════════❖  
-
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ●─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─● :zap:
-
-● The Grid™ - Official :copyright: **`);
-
-message.author.sendEmbed(embed)
-
-  }
-});
-
 client.on("message", message => {
   if(message.content.startsWith("/gaming")) {
     let num = Math.floor((Math.random() * 4783) + 10);
@@ -1328,7 +1295,7 @@ client.on('message', msg => {
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**Name Of bot ?**' + '``')
 if(!user.bot) return msg.reply('\`Montion Bot\`');
-msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?client_id=${user.id}&scope=bot&permissions=384064`)
+msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
     }
 });
 
@@ -1348,8 +1315,8 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-        .setTitle(`:arrow_right: :rainbow: Click Here To Invite Quorra RainBow Bot :rainbow: :arrow_left:`)
-        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
+  .setTitle(`:arrow_right: :rainbow: Click Here To Invite Quorra RainBow Bot :rainbow: :arrow_left:`)
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 
        }
@@ -1364,11 +1331,45 @@ client.on('message', message => {
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setTitle(`:arrow_right: :rainbow: Click Here To Invite Rinzler Music Bot :rainbow: :arrow_left:`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) **`);
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) 
      message.channel.sendEmbed(embed);
 	   
        }
    });
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "invite") {
+    
+   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**
+:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
+  
+❖═════════════════════════════════════❖  
+
+● :one: - :rainbow: : ${prefix}invite-quorra :arrow_right: To Invite Quorra RainBow Bot ●
+
+● :two: - :headphones: : ${prefix}invite-rinzler :arrow_right: To Invite Rinzler Music Bot ●
+
+● :books: - : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+
+❖═════════════════════════════════════❖  
+
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
+
+:zap: ─═════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═════─ :zap:
+
+● The Grid™ - Official :copyright: **`);
+
+message.author.sendEmbed(embed)
+
+  }
+});
+
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
