@@ -33,7 +33,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`:arrow_right: :x: THIS COMMANDS ONLR FOR BOT OWNER/CREATOR :x:`)
+  .setTitle(`:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:`)
      message.channel.sendEmbed(embed);
 	   
        }
