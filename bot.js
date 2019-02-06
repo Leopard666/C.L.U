@@ -27,7 +27,7 @@ spee={};
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-   if(message.author.id !== "480540559233122324") return message.reply('You aren\'t the bot owner.');
+   if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
  
    message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **');
    const embed = new Discord.RichEmbed()
@@ -1368,7 +1368,7 @@ client.on('message', message => {
 
 :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
-:zap: ─═════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═════─ :zap:
+:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap:
 
 ● The Grid™ - Official :copyright: **`);
 
