@@ -24,15 +24,20 @@ const prefix = '/'
 ti={}  
 spee={};
 
-client.on('message' , message => {
-if(message.content === 'help') {
-if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(":x: You Don't Have `MANAGE CHANNELS` Premissions :x:");
-  var EsTeKnAN = new Discord.RichEmbed()
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+   if(message.author.id !== "480540559233122324") return message.reply('You aren\'t the bot owner.');
+ 
+   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-message.author.send(`**:x: COMMANDS ONLy FOR BOT OWNER :x:**
-`);
-}
-})
+  .setTitle(`:arrow_right: :x: THIS COMMANDS ONLR FOR BOT OWNER/CREATOR :x:`)
+     message.channel.sendEmbed(embed);
+	   
+       }
+   });
 
   client.on('ready', function(){
   client.user.setStatus("dnd");
@@ -1293,6 +1298,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
     if(msg.content.startsWith('/bot')) {
+    if(message.author.id !== "480540559233122324") return message.reply('You aren\'t the bot owner.');
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**Name Of bot ?**' + '``')
