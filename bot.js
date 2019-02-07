@@ -467,14 +467,15 @@ client.on('message', message=> {
 
 
 client.on('guildMemberAdd', member => {
-  let channel = member.guild.channels.find('name', 'Welcome To :flag_tn: The Grid™ - Official Server :flag_tn:');
+  let channel = member.guild.channels.find('name', '☆welcome☆');
   let memberavatar = member.user.avatarURL
     if (!channel) return;
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
       .addField('•🔰|Name» ',`${member}`)
-      .addField('•🌹|Welcome » ' , `💎 Welcome To The Grid™ :tada::hugging: ! , ${member} 💎`)
+      .addField('•🌹|Welcome » ' , `💎 Welcome ${member} to The Grid™ - Official  Server , Please be sure to take a look at the rules in #read-me  additional details can be found in #announcements . Our Support team is here and happy to help you if you have any questions regarding Grid. Enjoy your stay~
+・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
       .addField('•🆔| User ID » ', "**[" + `${member.id}` + "]**" )
               .addField('➡| YOU ARE NUMBER',`${member.guild.memberCount}`)                     
                                    .addField('•🔮|Server Name » ', `${member.guild.name}`,true)
@@ -486,6 +487,15 @@ client.on('guildMemberAdd', member => {
  
     channel.sendEmbed(embed);
 });
+
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(.addField('➡| YOU ARE NUMBER',`${member.guild.memberCount}`)
+}).catch(console.error)
+})
+
+
 
 
 client.on('message', message => {
