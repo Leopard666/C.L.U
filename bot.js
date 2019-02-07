@@ -1083,11 +1083,8 @@ client.on('message', async message => {
 
               message.channel.send(`Done`)
                 client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
-
-              })
-            }
-          })
- 
+    }
  });
+
 
 client.login(process.env.BOT_TOKEN);
