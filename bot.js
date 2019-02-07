@@ -339,7 +339,6 @@ client.on('message', message => {
       .addField('Reason', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
- if (!args) return message.reply('**:sunglasses:WE WILL READ YOUR REPORT SOON:sunglasses:**');
 
   }
   });
