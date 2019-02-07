@@ -226,7 +226,6 @@ client.on('message', message => {
  client.on('message', message => {
 if(message.content.startsWith(prefix +'botnews')) {
 if(!message.channel.guild) return message.channel.send('**This Command Only For Servers **').then(m => m.delete(5000));
-if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
       const A8tra7Room = message.guild.channels.find("name", "bot-status-logs")
       if(!message.channel.guild) return message.reply(`This Command Only For Servers :x:`);
    let a8tra7 = message.content.split(' ').slice(1).join(' ')
