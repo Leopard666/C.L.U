@@ -523,7 +523,7 @@ if(message.author.id !== "480540559233122324") return message.reply('**⚠ | **Y
          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
          let x5bz2 = new Discord.RichEmbed()
          .setColor("#008000")
-         msg.channel.send("**```white_check_mark: | Delete " + args[1] + " Message !```**").then(m => m.delete(3000));  
+         msg.channel.send("**```white_check_mark: | Delete " + args[1] + " Message !```**").then(m => m.delete(3000)  
   
  }
  });
