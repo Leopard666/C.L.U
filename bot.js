@@ -281,15 +281,22 @@ client.on('message', message => {
         message.react("👍");
         message.react("👎");
 
+    }
+});
+
 client.on('message', message => {
     if (message.channel.id == "542901835980210189") {
         message.react("👍");
         message.react("👎");
 
+    }
+});
+
 client.on('message', message => {
     if (message.channel.id == "542901900413239296") {
         message.react("👍");
         message.react("👎");
+
     }
 });
 
@@ -364,7 +371,7 @@ client.on('guildMemberAdd', (member) => {
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find('name', 'reports');
         if (!reason) return message.reply(':hearts:');
-          if (message.mentions.users.size < 1) return message.reply('**You must Montion the member to be reported**').catch(console.error);
+        if (message.mentions.users.size < 1) return message.reply('**You must Montion the member to be reported**').catch(console.error);
    
     if (!modlog) return message.reply('**Report Room is Not available**');
     const embed = new Discord.RichEmbed()
