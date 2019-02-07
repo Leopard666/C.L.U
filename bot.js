@@ -489,12 +489,12 @@ client.on('guildMemberAdd', member => {
 });
 
 
+
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(.addField('➡| YOU ARE NUMBER',`${member.guild.memberCount}`)
+  return channel.send(`**💎 Welcome ${member} To The Grid™ - Official  Server 🌹 And You ARE Number',`${member.guild.memberCount}`)
 }).catch(console.error)
 })
-
 
 
 
