@@ -88,6 +88,7 @@ client.on('message', message => {
   if (message.author.bot) return;
  if (!message.channel.guild) return;
  if (message.content.startsWith(prefix + 'mb')) {
+ if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
      if (!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
          .setColor('RANDOM')
@@ -425,14 +426,14 @@ client.on('guildMemberAdd', member => {
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
-      .addField('•🔰|Name » ',`${member}`)
-      .addField('•🌹|Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
+      .addField('• 🔰|Name » ',`${member}`)
+      .addField('• 🌹|Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
 Welcome ${member} To The Grid™ - Official  Server , Please be sure to take a look at the rules in #read-me  additional details can be found in #announcements . Our Support team is here and happy to help you if you have any questions regarding Grid, Enjoy your stay.
 💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
-      .addField('•🆔| User ID » ', "**[" + `${member.id}` + "]**" )
-              .addField('➡| You Are Number',`${member.guild.memberCount}`)                     
-                                   .addField('•🔮|Server Name » ', `${member.guild.name}`,true)
-  .addField('•🕣|Time Create » ', member.user.createdAt.toLocaleString(), true)
+      .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
+              .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
+                                   .addField('• 🔮|Server Name » ', `${member.guild.name}`,true)
+  .addField('• 🕣|Time Create » ', member.user.createdAt.toLocaleString(), true)
 
                                      
    .setFooter("|•♥•| The Grid™ |•♥•|")
@@ -445,7 +446,7 @@ Welcome ${member} To The Grid™ - Official  Server , Please be sure to take a l
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**💎 Welcome •🔮| ${member} To •🔰| ${member.guild.name} Server , Please Read Our Rules Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ ,And You ARE Number •🆔| ${member.guild.memberCount} 💎**`)
+  return channel.send(`**💎 Welcome ${member} To 🔰• ${member.guild.name} Server •🔰 - Please Read Our Rules Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
 }).catch(console.error)
 })
 
@@ -509,8 +510,9 @@ client.on("message", message => {
           var args = message.content.substring(prefix.length).split(" ");
           if (message.content.startsWith(prefix + "clear")) {
 if (!args[1]) {
+if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
                               let x5bz1 = new Discord.RichEmbed()
-                              .setDescription(".clear <number>")
+                              .setDescription("** :x: Type <number> To Clear :x: **")
                               .setColor("#0000FF")
                               message.channel.sendEmbed(x5bz1);
                           } else {
@@ -1081,7 +1083,7 @@ client.on('message', async message => {
           .then(co => {
             text = co.first().content
 
-              message.channel.send(`Done`)
+              message.channel.send(`**:white_check_mark: Message Has Been Sent !**`)
                 client.channels.get("529660172587499546").send(`${message.author.username}'s said => ${text}`)
 
               })
