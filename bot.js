@@ -385,7 +385,7 @@ client.on('guildMemberAdd', (member) => {
       .addField('Reason', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
- if (!args) return message.reply('**Done !**');
+ if (!args) return message.reply('**:sunglasses:WE WILL READ YOUR REPORT SOON:sunglasses:**');
 
   }
   });
@@ -466,24 +466,27 @@ client.on('message', message=> {
 });
 
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`
-**・。・゜★・。・。☆・゜・。・゜。・。・゜★・。・。☆
- :flag_tn: The Grid™ - Official Server :flag_tn:
-・。・゜★・。・。☆・゜・。・゜。・。・゜★・。・。☆
+client.on('guildMemberAdd', member => {
+  let channel = member.guild.channels.find('name', 'Welcome To :flag_tn: The Grid™ - Official Server :flag_tn:');
+  let memberavatar = member.user.avatarURL
+    if (!channel) return;
+  let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(memberavatar)
+      .addField('•🔰|Name» ',`${member}`)
+      .addField('•🌹|Welcome » ' , `💎 Welcome To The Grid™ :tada::hugging: ! , ${member} 💎`)
+      .addField('•🆔| User ID » ', "**[" + `${member.id}` + "]**" )
+              .addField('➡| YOU ARE NUMBER',`${member.guild.memberCount}`)                     
+                                   .addField('•🔮|Server Name » ', `${member.guild.name}`,true)
+  .addField('•🕣|Time Create » ', member.user.createdAt.toLocaleString(), true)
 
-╔═══════════════════════════════════════════════════════════════════════════╗
+                                     
+   .setFooter("|•♥•| The Grid™ |•♥•|")
+      .setTimestamp()
+ 
+    channel.sendEmbed(embed);
+});
 
-● Welcome User :wave: ,We Glad To Have You In Our The Grid™ - Official Server . :fire: 
-● And Yeah Don't Forget To READ Our Server Rules In : #Read-Me To Avoid BAN / KICK . :sunglasses: ! 
-● :fire: Chose Your Role Here : #self-roles :fire:.
-● If You Have Question Or Need Any Help Please PM : The Grid™ - Official Owners. :thumbsup:
-● So Enjoy And Have Fun ,Stay Clean Boooyyy . :thumb
-
-╚═══════════════════════════════════════════════════════════════════════════╝**`)
-}).catch(console.error)
-})
 
 client.on('message', message => {
                                 if(!message.channel.guild) return;
