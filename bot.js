@@ -1076,13 +1076,13 @@ message.author.sendEmbed(embed)
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
-  await  message.channel.send(`Write`)
+  if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
+  await  message.channel.send(`** :x: Write Something To Send :x:**`)
     let filter = m => m.author.id === message.author.id
       var text = '';
         let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
           .then(co => {
             text = co.first().content
-
               message.channel.send(`**:white_check_mark: Message Has Been Sent !**`)
                 client.channels.get("529660172587499546").send(`${message.author.username}'s said => ${text}`)
 
