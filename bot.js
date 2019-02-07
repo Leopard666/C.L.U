@@ -275,7 +275,7 @@ msg.delete();
 }			     
 });                        
   
-bot.on("message", message => {
+client.on('message', message => {
     if (message.channel.id == "541631206735872000") {
         message.react("👍");
         message.react("👎");
