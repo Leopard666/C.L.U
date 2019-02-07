@@ -414,7 +414,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply(" **${member} How can I help you With ?** ");
+    message.reply(" **How can I help you With ?** ");
     }
 });
 
@@ -471,9 +471,9 @@ message.channel.send({embed:embed});
 
 client.on('message', msg => {
 
-  if (msg.content === 'Hi') {
+  if (msg.content === 'hi') {
 
-    msg.reply('**Hi ${member} :hearts: **');
+    msg.reply('**Hi :hearts: **');
 
   }
 
@@ -993,7 +993,7 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-    if(msg.content.startsWith('/clu')) {
+    if(msg.content.startsWith('clu')) {
     if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
