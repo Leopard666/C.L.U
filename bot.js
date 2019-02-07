@@ -112,7 +112,6 @@ client.on('message', message => {
   client.on('message', message => {
     if (message.content.startsWith("link")) {
       if(!message.guild.member(client.user).hasPermission("CREATE_INSTANT_INVITE")) return message.reply("**I Don't Have `CREATE_INSTANT_INVITE` Permission**").then(msg => msg.delete(6000))
-  
         message.channel.createInvite({
           thing: true,
           maxUses: 5,
@@ -120,6 +119,8 @@ client.on('message', message => {
     }).then(invite =>
       message.author.sendMessage(invite.url)
     )
+      message.author.send(`** :link: TIME FOR THE LINK : " 1DAY " :link:**`)
+
       message.channel.send("**:link: Invite Linke Sent In DM Successfully**")
     }
   });
@@ -994,7 +995,7 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-    if(msg.content.startsWith('clu')) {
+    if(msg.content.startsWith('/clu')) {
     if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
@@ -1077,14 +1078,14 @@ message.author.sendEmbed(embed)
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
   if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
-  await  message.channel.send(`** :x: Write Something To Send :x:**`)
+  await  message.channel.send(`** :x: Now Write Something To Send :x:**`)
     let filter = m => m.author.id === message.author.id
       var text = '';
         let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
           .then(co => {
             text = co.first().content
               message.channel.send(`**:white_check_mark: Message Has Been Sent !**`)
-                client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
+                client.channels.get("541627590637518853").send(`**${message.author.username} Said => ${text}**`)
 
               })
             }
