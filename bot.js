@@ -87,7 +87,7 @@ client.on('message', message => {
 
   if (message.author.bot) return;
  if (!message.channel.guild) return;
- if (message.content.startsWith(prefix + 'mb')) {
+ if (message.content.startsWith(prefix + 'online')) {
  if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
      if (!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
@@ -520,7 +520,7 @@ client.on("message", message => {
       message.channel.sendMessage("", {embed: {
         title: "Done",
         color: 0x06DF00,
-        description: "**:white_check_mark: Chats Has Successfully Cleared**",
+        description: "**:white_check_mark: | Chats Has Successfully Cleared**",
         footer: {
         }
       }}).then(msg => {msg.delete(3000)});
