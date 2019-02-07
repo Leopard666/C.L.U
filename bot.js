@@ -28,7 +28,6 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
    if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
- 
    message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
@@ -227,23 +226,24 @@ client.on('message', message => {
  client.on('message', message => {
 if(message.content.startsWith(prefix +'sug')) {
 if(!message.channel.guild) return message.channel.send('**This Command Only For Servers **').then(m => m.delete(5000));
-      const A8tra7Room = message.guild.channels.find("name", "suggestions")
+if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
+      const A8tra7Room = message.guild.channels.find("name", "bot-status-logs")
       if(!message.channel.guild) return message.reply(`This Command Only For Servers :x:`);
    let a8tra7 = message.content.split(' ').slice(1).join(' ')
    var m8tr7 = message.author.id
-if(!message.guild.channels.find("name","suggestions")) return message.channel.send('i cant find `suggestions` room!')
+if(!message.guild.channels.find("name","bot-status-logs")) return message.channel.send('i cant find `bot-status-logs` room!')
    var ThxForSug = new Discord.RichEmbed()
       .setColor('WHITE')
    .setTitle(`:white_check_mark: Success!`)
    .setTimestamp()
-   .setDescription(`Thanks for your suggestion! :sparkles: `)
-.setDescription(`**Your Suggestion** : ${a8tra7}`)
+   .setDescription(`Thanks for your bot-status-logs ! :sparkles: `)
+.setDescription(`**bot-status-logs** : ${a8tra7}`)
    var Sure = new Discord.RichEmbed()
    .setTimestamp()
       .setColor('WHITE')
    .setTitle(`Are you sure you send the proposal? You have a minute before canceling.`)               
 .setDescription(`Suggestion : **${a8tra7}**`)
-		 .setFooter('TG Suggestion' , client.user.avatarURL)
+		 .setFooter('TG bot-status-logs' , client.user.avatarURL)
 message.channel.sendEmbed(Sure).then(msg => {
     msg.react('❎')
 .then(() => msg.react('✅'))
@@ -259,8 +259,8 @@ Yes.on("collect", r => {
    .setTimestamp()
    .setColor('GOLD')
    .setThumbnail(message.author.avatarURL)
-   .setTitle(`New Suggestion :bell:`)
-   .setDescription(`From : __<@${m8tr7}>__\n\nSuggestion: **${a8tra7}**`)
+   .setTitle(`New bot-status-logs :bell:`)
+   .setDescription(`From : __<@${m8tr7}>__\n\nbot-status-logs: **${a8tra7}**`)
    .setFooter(`${message.author.username}#${message.author.discriminator}`)
    A8tra7Room.send(ala8tra7)
    message.channel.sendEmbed(ThxForSug).then(message => {message.delete(6000)})
@@ -268,7 +268,7 @@ msg.delete();
 
 })
 No.on("collect", r => {
-message.channel.send('suggestion canceled :white_check_mark: ').then(message => {message.delete(6000)})
+message.channel.send('bot-status-logs canceled :white_check_mark: ').then(message => {message.delete(6000)})
 msg.delete();
 })
 })
@@ -282,6 +282,23 @@ client.on('message', message => {
         console.log("suggestion received !");
     }
 });
+
+client.on('message', message => {
+    if (message.channel.id == "542901835980210189") {
+        message.react("👍");
+        message.react("👎");
+        console.log("suggestion received !");
+    }
+});
+
+client.on('message', message => {
+    if (message.channel.id == "542901900413239296") {
+        message.react("👍");
+        message.react("👎");
+        console.log("suggestion received !");
+    }
+});
+
 
 const seender = 'Brodcast + Sender -> {sender}.';
 const server = 'Brodcast + server -> {server}.';
