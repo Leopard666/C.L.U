@@ -120,10 +120,10 @@ client.on('message', message => {
     }).then(invite =>
       message.author.sendMessage(invite.url)
     )
-      message.channel.send("**:link: Invite Linke Sent In DM Successfully :link:**")
-      message.author.send(`**:link: TIME FOR THE LINK : 1DAY :link:**`)
+      message.channel.send("**:link: Invite Linke Sent In DM Successfully**")
     }
   });
+
 
 
   const codes = {
@@ -1084,7 +1084,7 @@ client.on('message', async message => {
           .then(co => {
             text = co.first().content
               message.channel.send(`**:white_check_mark: Message Has Been Sent !**`)
-                client.channels.get("529660172587499546").send(`${message.author.username}'s said => ${text}`)
+                client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
 
               })
             }
