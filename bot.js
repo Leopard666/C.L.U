@@ -511,7 +511,7 @@ client.on("message", message => {
           var args = message.content.substring(prefix.length).split(" ");
           if (message.content.startsWith(prefix + "clear")) {
 if (!args[1]) {
-if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
+if(message.author.id !== "480540559233122324") return message.reply('**⚠ | **You Don`t Have Permission**');
                               let x5bz1 = new Discord.RichEmbed()
                               .setDescription("** :x: Type <number> To Clear :x: **")
                               .setColor("#0000FF")
@@ -523,8 +523,7 @@ if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY M
                           message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
                           let x5bz2 = new Discord.RichEmbed()
                               .setColor("#008000")
-                              .setDescription(":white_check_mark: | Delete " + args[1] + " Message !")
-                              }}).then(msg => {msg.delete(3000)});
+                              .setDescription(":white_check_mark: | Delete " + args[1] + " Message !").then(m => m.delete(3000));     
                           }
                         }
 });
