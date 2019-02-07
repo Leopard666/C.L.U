@@ -262,9 +262,6 @@ Yes.on("collect", r => {
    .setTitle(`New Suggestion :bell:`)
    .setDescription(`From : __<@${m8tr7}>__\n\nSuggestion: **${a8tra7}**`)
    .setFooter(`${message.author.username}#${message.author.discriminator}`)
-   message.channel.sendEmbed(Sure).then(msg => {
-    msg.react('❎')
-   .then(() => msg.react('✅'))
    A8tra7Room.send(ala8tra7)
    message.channel.sendEmbed(ThxForSug).then(message => {message.delete(6000)})
 msg.delete();
@@ -278,6 +275,13 @@ msg.delete();
 }			     
 });                        
   
+bot.on("message", message => {
+    if (message.channel.id == "541631206735872000") {
+        message.react("👍");
+        message.react("👎");
+        console.log("suggestion received !");
+    }
+});
 
 const seender = 'Brodcast + Sender -> {sender}.';
 const server = 'Brodcast + server -> {server}.';
