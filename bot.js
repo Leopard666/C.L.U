@@ -224,7 +224,7 @@ client.on('message', message => {
 });
 
  client.on('message', message => {
-if(message.content.startsWith(prefix +'botnews')) {
+if(message.content.startsWith(prefix +'news')) {
 if(!message.channel.guild) return message.channel.send('**This Command Only For Servers **').then(m => m.delete(5000));
       const A8tra7Room = message.guild.channels.find("name", "bot-status-logs")
       if(!message.channel.guild) return message.reply(`This Command Only For Servers :x:`);
@@ -386,13 +386,9 @@ client.on('guildMemberAdd', (member) => {
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
  if (!args) return message.reply('**Done !**');
+
   }
   });
-
-
-
-
-
 
 //move
 client.on('message',message => {
@@ -427,7 +423,7 @@ message.react("❌")
 
 
 var adminprefix = '//'
-const developers = ["480540559233122324","383277762074509327"]
+const developers = ["480540559233122324"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -489,7 +485,6 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
-
 client.on('message', message => {
                                 if(!message.channel.guild) return;
                         if (message.content.startsWith('/ping')) {
@@ -505,7 +500,6 @@ client.on('message', message => {
 message.channel.send({embed:embed});
                         }
                     });
-
 
 
 
@@ -1406,7 +1400,7 @@ message.author.sendEmbed(embed)
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
-  await  message.channel.send(`Write`)
+  await  message.channel.send(`Write Somthind To Send !`)
     let filter = m => m.author.id === message.author.id
       var text = '';
         let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
