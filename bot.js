@@ -1074,7 +1074,7 @@ message.author.sendEmbed(embed)
 
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
-  await  message.channel.send(`Write Something To Send !`)
+  await  message.channel.send(`Write`)
     let filter = m => m.author.id === message.author.id
       var text = '';
         let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
@@ -1082,8 +1082,15 @@ client.on('message', async message => {
             text = co.first().content
 
               message.channel.send(`Done`)
-                client.channels.get("541627590637518853").send(`${message.author.username}'s said => ${text}`)
-    }
+                client.channels.get("529660172587499546").send(`${message.author.username}'s said => ${text}`)
+
+              })
+            }
+          })
+
+client.on('ready', () => {
+    client.user.setStatus("dnd");
+ 
  });
 
 
