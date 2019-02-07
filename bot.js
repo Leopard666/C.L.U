@@ -508,29 +508,27 @@ client.on('message', msg => {
 
 
 client.on("message", message => {
-          var args = message.content.substring(prefix.length).split(" ");
-          if (message.content.startsWith(prefix + "clear")) {
-if (!args[1]) {
-if(message.author.id !== "480540559233122324") return message.reply('**⚠ | **You Don`t Have Permission**');
-                              let x5bz1 = new Discord.RichEmbed()
-                              .setDescription("** :x: Type <number> To Clear :x: **")
-                              .setColor("#0000FF")
-                              message.channel.sendEmbed(x5bz1);
-                          } else {
-                          let messagecount = parseInt(args[1]);
-                          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-         message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-         message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-         let x5bz2 = new Discord.RichEmbed()
-         .setColor("#008000")
-         description: "**:white_check_mark: | Chats Successfully Cleared**",
+    var prefix = "/"; 
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **You Don`t Have Permission**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done",
+        color: 0x06DF00,
+        description: "**:white_check_mark: Chats Has Successfully Cleared**",
         footer: {
         }
       }}).then(msg => {msg.delete(3000)});
                           }
-  
-});
 
+    
+});
+     
 
 client.on("message", (message) => {
 if (message.content.startsWith("/ct")) {
