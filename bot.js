@@ -224,7 +224,7 @@ client.on('message', message => {
 });
 
  client.on('message', message => {
-if(message.content.startsWith(prefix +'sug')) {
+if(message.content.startsWith(prefix +'botnews')) {
 if(!message.channel.guild) return message.channel.send('**This Command Only For Servers **').then(m => m.delete(5000));
 if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
       const A8tra7Room = message.guild.channels.find("name", "bot-status-logs")
@@ -275,27 +275,21 @@ msg.delete();
 }			     
 });                        
   
+
 client.on('message', message => {
     if (message.channel.id == "541631206735872000") {
         message.react("👍");
         message.react("👎");
-        console.log("suggestion received !");
-    }
-});
 
 client.on('message', message => {
     if (message.channel.id == "542901835980210189") {
         message.react("👍");
         message.react("👎");
-        console.log("suggestion received !");
-    }
-});
 
 client.on('message', message => {
     if (message.channel.id == "542901900413239296") {
         message.react("👍");
         message.react("👎");
-        console.log("suggestion received !");
     }
 });
 
