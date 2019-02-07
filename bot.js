@@ -279,6 +279,7 @@ client.on('message', message => {
     if (message.channel.id == "541631206735872000") {
         message.react("👍");
         message.react("👎");
+        console.log("suggestion is Ready !");
 
     }
 });
@@ -287,6 +288,7 @@ client.on('message', message => {
     if (message.channel.id == "542901835980210189") {
         message.react("👍");
         message.react("👎");
+        console.log("suggestion is Ready !");
 
     }
 });
@@ -295,6 +297,7 @@ client.on('message', message => {
     if (message.channel.id == "542901900413239296") {
         message.react("👍");
         message.react("👎");
+        console.log("suggestion is Ready !");
 
     }
 });
