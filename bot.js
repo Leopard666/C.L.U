@@ -265,6 +265,8 @@ Yes.on("collect", r => {
    A8tra7Room.send(ala8tra7)
    message.channel.sendEmbed(ThxForSug).then(message => {message.delete(6000)})
 msg.delete();
+   message.react("👍");
+   message.react("👎");
 })
 No.on("collect", r => {
 message.channel.send('suggestion canceled :white_check_mark: ').then(message => {message.delete(6000)})
@@ -274,7 +276,6 @@ msg.delete();
 }			     
 });                        
   
-
 
 const seender = 'Brodcast + Sender -> {sender}.';
 const server = 'Brodcast + server -> {server}.';
