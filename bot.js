@@ -992,16 +992,21 @@ client.on('message', message => {
 });
 
 
-client.on('message', msg => {
-    if(msg.content.startsWith('clu')) {
-    if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
-    if(msg.channel.type === 'dm') return;
-const user = msg.mentions.users.first();
-if(!user) return msg.channel.send('``' + '**You Must Montion Name Of The Bot !**' + '``')
-if(!user.bot) return msg.reply('\`Montion Bot\`');
-msg.channel.send(`**C.L.U Bot InviteURL : ** https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`)
-    }
-});
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "invite-clu") {
+   if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
+
+   message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`) 
+     message.channel.sendEmbed(embed);
+	   
+       }
+   });
 
     client.on('voiceStateUpdate', (old, now) => {
     const channel = client.channels.get('542094021699436551');
