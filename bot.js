@@ -27,12 +27,12 @@ spee={};
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-   if(message.author.id !== "480540559233122324") return message.reply(':x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:');
+   if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
    message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:`)
+  .setTitle(`**:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:**`)
      message.channel.sendEmbed(embed);
 	   
        }
@@ -415,7 +415,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply(" **How can I help you ?** ");
+    message.reply(" **${member} How can I help you With ?** ");
     }
 });
 
@@ -474,7 +474,7 @@ client.on('message', msg => {
 
   if (msg.content === 'Hi') {
 
-    msg.reply('**Hi :hearts: **');
+    msg.reply('**Hi ${member} :hearts: **');
 
   }
 
@@ -857,7 +857,7 @@ if(!message.channel.guild) return message.reply(':no_entry: | This Command For S
 
 
  client.on('ready', () => {
- 	console.log('I am ready!'); 
+ 	console.log('I am Ready !'); 
    });
 
 
@@ -887,7 +887,7 @@ if (command == "say") {
 
   client.on('message',async message => {
     if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "480540559233122324") return message.reply('You aren\'t the bot owner.');
+        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You aren\'t The Bot Owner !**');
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
                msg.edit('**:arrows_counterclockwise: C.L.U Restarting..**');
@@ -1019,7 +1019,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:`)
+  .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 
@@ -1034,7 +1034,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:`)
+  .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) 
      message.channel.sendEmbed(embed);
 	   
