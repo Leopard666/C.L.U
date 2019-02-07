@@ -995,7 +995,8 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-clu") {
-   if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
+   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!'); 
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!');
 
    message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **');
    const embed = new Discord.RichEmbed()
