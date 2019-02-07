@@ -243,7 +243,7 @@ if(!message.guild.channels.find("name","suggestions")) return message.channel.se
       .setColor('WHITE')
    .setTitle(`Are you sure you send the proposal? You have a minute before canceling.`)               
 .setDescription(`Suggestion : **${a8tra7}**`)
-		 .setFooter('TG Games' , client.user.avatarURL)
+		 .setFooter('TG Suggestion' , client.user.avatarURL)
 message.channel.sendEmbed(Sure).then(msg => {
     msg.react('❎')
 .then(() => msg.react('✅'))
@@ -262,8 +262,9 @@ Yes.on("collect", r => {
    .setTitle(`New Suggestion :bell:`)
    .setDescription(`From : __<@${m8tr7}>__\n\nSuggestion: **${a8tra7}**`)
    .setFooter(`${message.author.username}#${message.author.discriminator}`)
-   message.react("👍")
-   message.react("👎")
+   message.channel.sendEmbed(Sure).then(msg => {
+    msg.react('❎')
+   .then(() => msg.react('✅'))
    A8tra7Room.send(ala8tra7)
    message.channel.sendEmbed(ThxForSug).then(message => {message.delete(6000)})
 msg.delete();
