@@ -326,8 +326,8 @@ client.on('message', message => {
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find('name', 'reports');
-        if (!reason) return message.reply(':hearts:');
-        if (message.mentions.users.size < 1) return message.reply('**You must Montion the member to be reported**').catch(console.error);
+        if (!reason) return message.reply('**:x: You Must Montion The Member To Be Reported and The Reason :x:**');
+        if (message.mentions.users.size < 1) return message.reply('**You must Montion The Member To Be Reported**').catch(console.error);
    
     if (!modlog) return message.reply('**Report Room is Not available**');
     const embed = new Discord.RichEmbed()
@@ -342,6 +342,30 @@ client.on('message', message => {
 
   }
   });
+
+//FeedBack
+client.on("message", message => {
+    let args = message.content.split(" ").slice(1);
+  if (message.content.startsWith('/feedback')) {
+        let user = message.mentions.users.first();
+        let reason = args.slice(1).join(' ');
+        let modlog = client.channels.find('name', 'feedback');
+        if (!reason) return message.reply('**:x: You Must Montion Yourself and Type Your Message To feedback :x:**');
+        if (message.mentions.users.size < 1) return message.reply('**:x: You Must Montion Yourself To feedback :x:**').catch(console.error);
+   
+    if (!modlog) return message.reply('**:x: feedback Room is Not Available :x:**');
+    const embed = new Discord.RichEmbed()
+      .setColor(0x8600AE)
+      .setTimestamp()
+      .addField('Message Type :', 'Feedback')
+      .addField('Author name :', `${message.author.username}#${message.author.discriminator}`)
+      .addField('Feedback Message', reason);
+      message.delete()
+      return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+
+  }
+  });
+
 
 //move
 client.on('message',message => {
