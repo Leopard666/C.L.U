@@ -56,6 +56,24 @@ client.on('message', message => {
     }, ms);
 });
 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '543463470532788274').setName("T");
+client.channels.find('id', '543463470532788274').setName("TH");
+client.channels.find('id', '543463470532788274').setName("THE");
+client.channels.find('id', '543463470532788274').setName("THE G");
+client.channels.find('id', '543463470532788274').setName("THE GR");
+client.channels.find('id', '543463470532788274').setName("THE GRI");
+client.channels.find('id', '543463470532788274').setName("THE GRID");
+client.channels.find('id', '543463470532788274').setName("THE GRID™");
+client.channels.find('id', '543463470532788274').setName("THE GRID™ 2");
+client.channels.find('id', '543463470532788274').setName("THE GRID™ 20");
+client.channels.find('id', '543463470532788274').setName("THE GRID™ 207");
+client.channels.find('id', '543463470532788274').setName("THE GRID™ 2077");
+
+  }, 60000);
+});
+
 
 client.on('message', message => {
   var prefix ="/";
