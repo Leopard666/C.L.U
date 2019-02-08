@@ -323,12 +323,14 @@ client.on('message', message => {
   client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/report')) {
+      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Report As Soon Possible) 🔰•**`)
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find('name', 'reports');
         if (!reason) return message.reply('**:x: You Must Montion The Member To Be Reported and The Reason :x:**');
         if (message.mentions.users.size < 1) return message.reply('**You must Montion The Member To Be Reported**').catch(console.error);
-   
+         
+
     if (!modlog) return message.reply('**Report Room is Not available**');
     const embed = new Discord.RichEmbed()
       .setColor(0x8600AE)
@@ -339,7 +341,7 @@ client.on('message', message => {
       .addField('Reason', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
-
+      
   }
   });
 
@@ -347,6 +349,8 @@ client.on('message', message => {
 client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/feedback')) {
+      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Feedback As Soon Possible) 🔰•**`)
+
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find('name', 'feedback');
@@ -497,7 +501,7 @@ client.on('message', msg => {
 
   if (msg.content === 'hi') {
 
-    msg.reply('**Hi :hearts: **');
+    msg.reply('**Hi How Are You :hearts: **');
 
   }
 
@@ -530,26 +534,28 @@ client.on('message', msg => {
  });
 
 
-client.on("message", message => {
-    var prefix = "/"; 
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **You Don`t Have Permission**');
-        var msg;
-        msg = parseInt();
-      
-      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("", {embed: {
-        title: "Done",
-        color: 0x06DF00,
-        description: "**:white_check_mark: | Chats Has Successfully Cleared**",
-        footer: {
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
+client.on('message', msg => {
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+  let command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = msg.content.split(" ").slice(1);
 
-    
+    if(command === "clear") {
+        const emoji = client.emojis.find("name", "log")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }    
+    }
+}
 });
      
 
@@ -960,9 +966,6 @@ by : <@${eyad.author.id}> `)
 eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(10000)})
     }
 })
-
-
-
 
 
 client.on('message', eyad => {
