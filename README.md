@@ -1,2 +1,2 @@
 # C.L.U
-FIGHTERS FOR USERS
+The Grid™ - The Perfect System
