@@ -60,6 +60,7 @@ client.on('message', message => {
 client.on('message', message => {
   var prefix ="/";
 if(message.content.startsWith(prefix +"server")){
+if(!message.channel.guild) return message.reply('** :x: This command Only For Servers :x:**');
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
@@ -82,12 +83,48 @@ message.channel.sendEmbed(embed)
 }
 });
 
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+var version = '1.9';
+client.on('message', message => {
+    if (message.content.startsWith(prefix + "stats")) {
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``C.L.U STATS`` ')
+            .addField('``Uptime``', [timeCon(process.uptime())], true)
+            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``servers``', [client.guilds.size], true)
+            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
+            .addField('``Node``' , `[${process.version} ]` , true)
+                  .addField('``My Prefix``' , `/` , true)
+                  .addField('``My Language``' , `[ Java Script ]` , true)
+                  .setFooter('By | TheRareRanger')
+    })
+}
+});
 
 client.on('message', message => {
 
   if (message.author.bot) return;
  if (!message.channel.guild) return;
- if (message.content.startsWith(prefix + 'online')) {
+ if (message.content.startsWith(prefix + 'members')) {
  if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
      if (!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
@@ -323,7 +360,7 @@ client.on('message', message => {
   client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/report')) {
-      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Report As Soon Possible) 🔰•**`)
+      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Report As Soon Possible) •🔰**`)
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find('name', 'reports');
@@ -335,10 +372,10 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
       .setColor(0x8600AE)
       .setTimestamp()
-      .addField('Message Type :', 'Report')
-      .addField('Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
-      .addField('Report owner :', `${message.author.username}#${message.author.discriminator}`)
-      .addField('Reason', reason);
+      .addField('🔰• Message Type :', '⛔ Report ⛔')
+      .addField('🔰• Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
+      .addField('🔰• Report owner :', `${message.author.username}#${message.author.discriminator}`)
+      .addField('🔰• Reason :', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
       
@@ -349,7 +386,7 @@ client.on('message', message => {
 client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/feedback')) {
-      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Feedback As Soon Possible) 🔰•**`)
+      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Feedback As Soon Possible) •🔰**`)
 
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
@@ -361,9 +398,9 @@ client.on("message", message => {
     const embed = new Discord.RichEmbed()
       .setColor(0x8600AE)
       .setTimestamp()
-      .addField('Message Type :', 'Feedback')
-      .addField('Author name :', `${message.author.username}#${message.author.discriminator}`)
-      .addField('Feedback Message', reason);
+      .addField('🔰• Message Type :', '❤ Feedback ❤')
+      .addField('🔰• Author name :', `${message.author.username}#${message.author.discriminator}`)
+      .addField('🔰• Feedback Message :', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
 
@@ -477,24 +514,6 @@ client.on("guildMemberAdd", member => {
   return channel.send(`**💎 Welcome ${member} To 🔰• ${member.guild.name} Server •🔰 - Please Read Our Rules Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
 }).catch(console.error)
 })
-
-
-
-client.on('message', message => {
-                                if(!message.channel.guild) return;
-                        if (message.content.startsWith('/ping')) {
-                            if(!message.channel.guild) return;
-                            var msg = `${Date.now() - message.createdTimestamp}`
-                            var api = `${Math.round(client.ping)}`
-                            if (message.author.bot) return;
-                        let embed = new Discord.RichEmbed()
-                        .setAuthor(message.author.username,message.author.avatarURL)
-                        .setThumbnail('https://cdn.discordapp.com/avatars/368141321547808768/c42716e13cb850f9ad0930af699472d0.png?size=2048nk')
-                        .setColor('#8258FA')
-                        .addField('**Ping:**',msg + " ms")
-message.channel.send({embed:embed});
-                        }
-                    });
 
 
 client.on('message', msg => {
