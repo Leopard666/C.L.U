@@ -52,7 +52,7 @@ client.on('message', message => {
             j = -1;
         }
         i = i+j;
-        client.user.setActivity(setActivity[i],`https://www.twitch.tv/TheRealPredvkill`);
+        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
     }, ms);
 });
 
