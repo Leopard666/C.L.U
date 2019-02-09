@@ -439,43 +439,6 @@ message.channel.send("**:x:  User must be in voice channel **")
 message.react("❌")
  }}})
 
-
-
-var adminprefix = '//'
-const developers = ["480540559233122324"]
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-     
-  if (message.content.startsWith(adminprefix + 'setgame')) {
-    client.user.setGame(argresult);
-      message.channel.send(`Done   ${argresult}**`)
-  } else
-     if (message.content === (adminprefix + "leave")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'setw')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`Done   ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'setl')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`Done   ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'sets')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/TheRealPredvkill");
-      message.channel.send(`Done`)
-  }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
-});
-
 client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
