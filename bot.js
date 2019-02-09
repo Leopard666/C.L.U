@@ -224,11 +224,11 @@ client.on('message', message => {
  client.on('message', message => {
 if(message.content.startsWith(prefix +'news')) {
 if(!message.channel.guild) return message.channel.send('**This Command Only For Servers **').then(m => m.delete(5000));
-      const A8tra7Room = message.guild.channels.find("name", "bot-status-logs")
+      const A8tra7Room = message.guild.channels.find(role => role.name === "bot-status-logs")
       if(!message.channel.guild) return message.reply(`This Command Only For Servers :x:`);
    let a8tra7 = message.content.split(' ').slice(1).join(' ')
    var m8tr7 = message.author.id
-if(!message.guild.channels.find("name","bot-status-logs")) return message.channel.send('i cant find `bot-status-logs` room!')
+if(!message.guild.channels.find(role => role.name ==="bot-status-logs")) return message.channel.send('i cant find `bot-status-logs` room!')
    var ThxForSug = new Discord.RichEmbed()
       .setColor('WHITE')
    .setTitle(`:white_check_mark: Success!`)
@@ -363,7 +363,7 @@ client.on('message', message => {
       message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Report As Soon Possible) •🔰**`)
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
-        let modlog = client.channels.find('name', 'reports');
+        let modlog = client.channels.find(role => role.name === 'reports');
         if (!reason) return message.reply('**:x: You Must Montion The Member To Be Reported and The Reason :x:**');
         if (message.mentions.users.size < 1) return message.reply('**You must Montion The Member To Be Reported**').catch(console.error);
          
@@ -390,7 +390,7 @@ client.on("message", message => {
 
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
-        let modlog = client.channels.find('name', 'feedback');
+        let modlog = client.channels.find(role => role.name === 'feedback');
         if (!reason) return message.reply('**:x: You Must Montion Yourself and Type Your Message To feedback :x:**');
         if (message.mentions.users.size < 1) return message.reply('**:x: You Must Montion Yourself To feedback :x:**').catch(console.error);
    
@@ -485,7 +485,7 @@ client.on('message', message=> {
 
 
 client.on('guildMemberAdd', member => {
-  let channel = member.guild.channels.find('name', '☆welcome☆');
+  let channel = member.guild.channels.find(role => role.name === '☆welcome☆');
   let memberavatar = member.user.avatarURL
     if (!channel) return;
   let embed = new Discord.RichEmbed()
@@ -536,7 +536,7 @@ client.on('message', msg => {
    let args = msg.content.split(" ").slice(1);
  
      if(command === "clr") {
-         const emoji = client.emojis.find("name", "wastebasket")
+         const emoji = client.emojis.find(role => role.name === "wastebasket")
      let textxt = args.slice(0).join("");
      if(msg.member.hasPermission("MANAGE_MESSAGES")) {
      if (textxt == "") {
@@ -561,7 +561,7 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(1);
 
     if(command === "clear") {
-        const emoji = client.emojis.find("name", "log")
+        const emoji = client.emojis.find(role => role.name === "log")
     let textxt = args.slice(0).join("");
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {
@@ -645,7 +645,7 @@ var args = message.content.split(" ").slice(1);
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("**Mention someone first**:x: ") .then(m => m.delete(5000));
     if(tomute.hasPermission("MANAGE_MESSAGES"))return      message.channel.send('**Sorry ,But I Dont Have Permissiom** `MANAGE_MESSAGEES`');
-    let muterole = message.guild.roles.find(`name`, "Muted");
+    let muterole = message.guild.roles.find(role => role.name === "Muted");
     //start of create role
     if(!muterole){
       try{
@@ -868,7 +868,7 @@ client.on("message", (message) => {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
-        let channel = message.client.channels.find('name', args.join(' '));
+        let channel = message.client.channels.find(role => role.name === args.join(' '));
         if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
         channel.delete()
     }
