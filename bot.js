@@ -23,7 +23,6 @@ const client = new Discord.Client();
 const prefix = '/'
 ti={}  
 spee={};
-process.setMaxListeners(11);
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -1110,5 +1109,5 @@ client.on('ready', () => {
  
  });
 
-
+process.setMaxListeners(11);
 client.login(process.env.BOT_TOKEN);
