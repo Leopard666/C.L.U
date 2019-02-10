@@ -8,12 +8,13 @@ const request = require('request');
 const dateFormat = require('dateformat');
 const google = require('google-it');
 const db = require('quick.db');
+const giphy = require('giphy-api')();    
 const googl = require('goo.gl');  
 const translate = require('google-translate-api');   
 const { Client, Util } = require('discord.js');  
 const UserBlocked = new Set(); 
 const moment = require('moment');
-const pretty = require(' -ms'); 
+const pretty = require('pretty-ms'); 
 const zalgo = require('zalgolize');   
 const math = require('math-expression-evaluator'); 
 const stripIndents = require('common-tags').stripIndents;
@@ -1108,5 +1109,4 @@ client.on('ready', () => {
  
  });
 
-process.setMaxListeners(11);
 client.login(process.env.BOT_TOKEN);
