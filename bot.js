@@ -442,7 +442,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply(" **How can I help you With ?** ");
+    message.reply(" **How Can I Help You With ?** ");
     }
 });
 
@@ -454,13 +454,13 @@ client.on('guildMemberAdd', member => {
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
-      .addField('• 🔰|Name » ',`${member}`)
-      .addField('• 🌹|Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
-Welcome ${member} To The Grid™ - Official  Server , Please be sure to take a look at the rules in #read-me  additional details can be found in #announcements . Our Support team is here and happy to help you if you have any questions regarding Grid, Enjoy your stay.
+      .addField('• 🔰| Name » ',`${member}`)
+      .addField('• 🌹| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
+Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take a look At The Rules in **#read-me** Additional Details Can Be Found In **#announcements** . Our Support Team Is Here And Happy To Help You If You Have Any **Questions Regarding The Grid™**, Enjoy Your Stay ♥.
 💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
       .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
               .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
-                                   .addField('• 🔮|Server Name » ', `${member.guild.name}`,true)
+                                   .addField('• 🔮| Server Name » ', `${member.guild.name}`,true)
   .addField('• 🕣|Time Create » ', member.user.createdAt.toLocaleString(), true)
 
                                      
@@ -474,7 +474,7 @@ Welcome ${member} To The Grid™ - Official  Server , Please be sure to take a l
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**💎 Welcome ${member} To 🔰• ${member.guild.name} Server •🔰 - Please Read Our Rules Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
+  return channel.send(`**💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our Rules Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
 }).catch(console.error)
 })
 
