@@ -360,7 +360,7 @@ client.on('message', message => {
   client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/report')) {
-      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Report As Soon Possible) •🔰**`)
+      message.author.send(`**🔰 • Thank You For Making Grid The Best Place ❤, (We Will Check Your Report As Soon Possible) • 🔰**`)
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find(x => x.name === 'reports');
@@ -461,7 +461,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
       .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
               .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
                                    .addField('• 🔮| Server Name » ', `${member.guild.name}`,true)
-  .addField('• 🕣|Time Create » ', member.user.createdAt.toLocaleString(), true)
+  .addField('• 🕣| Time Create » ', member.user.createdAt.toLocaleString(), true)
 
                                      
    .setFooter("|•♥•| The Grid™ |•♥•|")
