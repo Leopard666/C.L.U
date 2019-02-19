@@ -386,7 +386,7 @@ client.on('message', message => {
 client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/feedback')) {
-      message.author.send(`**🔰• Thank You For Making Grid The Best Place, (We Will Check Your Feedback As Soon Possible) •🔰**`)
+      message.author.send(`**🔰 • Thank You For Making Grid The Best Place, (We Will Check Your Feedback As Soon Possible) • 🔰**`)
 
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
@@ -516,29 +516,18 @@ client.on('message', msg => {
  });
 
 
-client.on('message', msg => {
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
-  let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = msg.content.split(" ").slice(1);
-
-    if(command === "clear") {
-        const emoji = client.emojis.find(x => x.name === "log")
-    let textxt = args.slice(0).join("");
-    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
-    if (textxt == "") {
-        msg.delete().then
-    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
-} else {
-    msg.delete().then
-    msg.delete().then
-    msg.channel.bulkDelete(textxt);
-        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
-        }    
-    }
-}
-});
+client.on('message', message => {
+    let args = message.content.split(" ").slice(1);
+if (message.content.startsWith(prefix + 'clear')) {
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**:x: ``No Permissions`` :x:**');
+ let args = message.content.split(" ").slice(1)
+    let messagecount = parseInt(args);
+    if (args > 100) return message.reply("**:x: ``Must Be Under >> 100`` :x:**").then(messages => messages.delete(5000))
+    if (!messagecount) return message.reply("**:x: ``Pick How Long You Want To Delete`` :x:**").then(messages => messages.delete(5000))
+    message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
+    message.channel.send(`\`${args}\` **✅ - Done** `).then(messages => messages.delete(5000));
+  }
+  });
      
 
 client.on("message", (message) => {
@@ -897,9 +886,9 @@ if (command == "say") {
 });
 
 
-  client.on('message',async message => {
+ client.on('message',async message => {
     if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You aren\'t The Bot Owner !**');
+        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**');
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
                msg.edit('**:arrows_counterclockwise: C.L.U Restarting..**');
@@ -912,7 +901,7 @@ if (command == "say") {
         console.log(`Restarting..`);
         setTimeout(() => {
             client.destroy();
-            client.login('process.env.BOT_TOKEN');
+            client.login(process.env.BOT_TOKEN);
         },3000);
     }
 });
