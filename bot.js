@@ -1,3 +1,5 @@
+// THIS BOT [C.L.U] CREATED BY THE RARER RARE RANGER - 2018 - 2019©
+// ==================================================================
 const Discord = require('discord.js');
 const fs = require('fs');
 const ms = require('ms');
