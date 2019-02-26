@@ -63,16 +63,16 @@ client.on('message', message => {
                   .addField('``My Prefix``' , `/` , true)
                   .addField('``My Language``' , `[ Java Script ]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-	          .setDescription(`** Attention [THE GRID™] Users 
-@C.L.U has returned from the darkness aka back online
-It must be your lucky day :smile: **`)
+	          .setDescription(` ``Attention The Grid Users 
+C.L.U has returned from the darkness aka back online
+It must be your lucky day :smile:`` `)
 
     })
 }
 });
 
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then(m => m.delete(2000));
+client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then(m => m.delete(1000));
 		   
  });
 
