@@ -41,8 +41,9 @@ function timeCon(time) {
 }
 var version = '1.9';
 client.on('ready', () => {
-      let modlog = client.channels.find(x => x.name === 'bot-status-logs');
-        embed: new Discord.RichEmbed()
+      const channel = client.channels.find(x => x.name === 'bot-status-logs');
+        channel.send(message)    
+	embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
