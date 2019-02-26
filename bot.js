@@ -40,10 +40,39 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
-	
 var version = '1.9';
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "CLU IS BACK ONLINE NOW")) {
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``🚀 [C.L.U] IS BACK ONLINE NOW 🚀`` ')
+            .addField('👑**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
+            .addField('``Bot Uptime``', [timeCon(process.uptime())], true)
+            .addField('``Bot Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``Bot RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``TG - Servers``', [client.guilds.size], true)
+            .addField('``TG - Channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``TG - Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``Bot Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``Bot ID``' , `[ ${client.user.id} ]` , true)
+            .addField('``Bot Node``' , `[${process.version} ]` , true)
+                  .addField('``My Prefix``' , `/` , true)
+                  .addField('``My Language``' , `[ Java Script ]` , true)
+                  .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
+	          .setDescription(`** Attention [THE GRID™] Users 
+@C.L.U has returned from the darkness aka back online
+It must be your lucky day :smile: **`)
+
+    })
+}
+});
+
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("/stats").then(m => m.delete(5000));
+client.channels.get("542905235241304065").send("CLU IS BACK ONLINE NOW").then(m => m.delete(2000));
 		   
  });
 
