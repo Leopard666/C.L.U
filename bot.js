@@ -44,7 +44,7 @@ function timeCon(time) {
 var version = '1.9';
 client.on('ready', function(){
 client.channels.get("542905235241304065").send("🚀 [C.L.U] IS BACK ONLINE NOW 🚀")
-	client.channel.send({
+	client.channel.get("542905235241304065").send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
