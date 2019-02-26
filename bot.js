@@ -42,7 +42,7 @@ function timeCon(time) {
 var version = '1.9';
 client.on('ready', () => {
       const channel = client.channels.find(x => x.name === 'bot-status-logs');
-        channel.send({
+        channel.send
 	embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
@@ -59,7 +59,7 @@ client.on('ready', () => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
 	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-     }
+     
    });
 	    
 // ==================================================================
