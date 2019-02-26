@@ -35,15 +35,15 @@ client.on('ready', () => {
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
-      .addField('• 🔰| Logged in as ${client.user.tag}! `)
-      .addField('• 🌹| [Start] ${new Date()} ')
-      .addField('• 🆔 | Logged in As * [ " ${client.user.username} " ]" )
-              .addField('➡| TDN - SERVERS : [ " ${client.guilds.size} " ]")                     
-                                   .addField('• 🔮| TDN - USERS : [ " ${client.users.size} " ]`,true)
-  .addField('• 🕣| TDN - CHANNELS :  [ " ${client.channels.size} " ] ')
+      .addField('• 🔰| Logged in As :' , `${client.user.tag} !`)
+      .addField('• 🌹| [Start] :' , `[${new Date()}]`)
+      .addField('• 🆔 | Logged in As :' , `["${client.user.username}"]`)
+              .addField('➡| TDN - SERVERS :' , `[ " ${client.guilds.size} " ]`)                     
+                                   .addField('• 🔮| TDN - USERS :' , `["${client.users.size}"]`)
+  .addField('• 🕣| TDN - CHANNELS :' , `["${client.channels.size}"]`)
 
                                      
-   .setFooter("|• Quorra Is Online Now ! •|")
+   .setFooter("|• C.L.U Is Online Now ! •|")
       .setTimestamp()
  
     channel.sendEmbed(embed);
