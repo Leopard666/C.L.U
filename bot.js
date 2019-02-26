@@ -48,7 +48,6 @@ client.on('ready', () => {
             .setColor('RANDOM')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**')
             .addField('``Bot Uptime :``', `[timeCon(process.uptime())]`, true)
-            .addField('``Bot Ping :``' , `[${Date.now() - message.createdTimestamp} + 'MS']`, true)
             .addField('``Bot RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``Servers :``', `[client.guilds.size]`, true)
             .addField('``Channels :``' , `[ ${client.channels.size} ]` , true)
