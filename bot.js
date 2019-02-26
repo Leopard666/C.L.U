@@ -40,8 +40,8 @@ function timeCon(time) {
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
 var version = '1.9';
-client.on('ready', client => {
-client.channels.get('542905235241304065').send('**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**')
+
+client.channels.get("542905235241304065").send("**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**")
 	     const embed = new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
@@ -58,12 +58,21 @@ client.channels.get('542905235241304065').send('**🚀 [C.L.U] IS BACK ONLINE NO
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
 	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-	     
+
           message.channel.sendEmbed(embed);
    
    });
 	    
 // ==================================================================
+
+
+
+
+
+
+
+
+
 
 client.on('message', message => {
   if (message.author.bot) return;
