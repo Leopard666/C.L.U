@@ -40,7 +40,7 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
-var version = '1.9';
+var version = '2.0';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "C.L.U IS BACK ONLINE NOW")) {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
@@ -48,7 +48,7 @@ client.on('message', message => {
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('RANDOM')
+            .setColor('859900')
             .setTitle('``🚀 [C.L.U] IS BACK ONLINE NOW 🚀`` ')
             .addField('👑**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
             .addField('``Bot Uptime``', [timeCon(process.uptime())], true)
@@ -64,9 +64,9 @@ client.on('message', message => {
                   .addField('``Bot Language``' , `[ Java Script ]` , true)
                   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
 	          .setTimestamp()
-	          .setDescription(` Attention [The Grid™] Users 
-[C.L.U] has returned from the darkness aka back online
-It must be your lucky day :smile: `)
+	          .setDescription(` **Attention [The Grid™] Users 
+[C.L.U] Has Returned From The Darkness Aka Back Online
+It Must Be Your Lucky Day** `)
 
     })
 }
@@ -138,6 +138,48 @@ var embed  = new Discord.RichEmbed()
 .setColor('#000000')
 message.channel.sendEmbed(embed)
 
+}
+});
+
+// ==================================================================
+
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+var version = '2.0';
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "stats")) {
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('859900')
+            .setTitle('``🚀 [C.L.U] STATS 🚀`` ')
+            .addField('👑**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
+            .addField('``Bot Uptime``', [timeCon(process.uptime())], true)
+            .addField('``Bot Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``Bot RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``TG - Servers``', [client.guilds.size], true)
+            .addField('``TG - Channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``TG - Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``Bot Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``Bot ID``' , `[ ${client.user.id} ]` , true)
+            .addField('``Bot Node``' , `[${process.version} ]` , true)
+                  .addField('``Bot Prefix``' , `/` , true)
+                  .addField('``Bot Language``' , `[ Java Script ]` , true)
+                  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+	          .setTimestamp()
+
+    })
 }
 });
 
