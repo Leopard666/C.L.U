@@ -30,24 +30,26 @@ spee={};
 
 client.on('ready', () => {
       let channel = member.guild.channels.find(x => x.name === 'bot-status-logs');
-     if (!channel) return;
-	let embed = new Discord.RichEmbed()
-      .setAuthor(client.user.username,client.user.avatarURL)
-      .setThumbnail(client.user.avatarURL)
-      .setColor('RANDOM')
-      .addField('• 🔰| Logged in As :' , `${client.user.tag} !`)
-      .addField('• 🔰| [Start] :' , `[${new Date()}]`)
-      .addField('• 🔰| Logged in As :' , `["${client.user.username}"]`)
-              .addField('🔰| TDN - SERVERS :' , `[ " ${client.guilds.size} " ]`)                     
-                                   .addField('• 🔰| TDN - USERS :' , `["${client.users.size}"]`)
-  .addField('• 🔰| TDN - CHANNELS :' , `["${client.channels.size}"]`)
-
-                                     
-   .setFooter("🔰 |• C.L.U Is Back Online Now ! •| 🔰")
-      .setTimestamp()
-  
-channel.sendEmbed(embed);
-
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**')
+            .addField('``Uptime :``', [timeCon(process.uptime())], true)
+            .addField('``My Ping :``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``Servers :``', [client.guilds.size], true)
+            .addField('``Channels :``' , `[ ${client.channels.size} ]` , true)
+            .addField('``Users :``' ,`[ ${client.users.size} ]` , true)
+            .addField('``My Name :``' , `[ ${client.user.tag} ]` , true)
+            .addField('``My ID :``' , `[ ${client.user.id} ]` , true)
+            .addField('``Node :``' , `[${process.version} ]` , true)
+                  .addField('``Bot Language :``' , `[ Java Script ]` , true)
+	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
+                  .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
+    })
+}
 });
 	    
 // ==================================================================
