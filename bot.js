@@ -41,7 +41,7 @@ function timeCon(time) {
 }
 var version = '1.9';
 client.on("message", function(message) {
-      client.channels.get(channelID).send(x => x.name === 'bot-status-logs');
+      client.channels.get(channelID).send('bot-status-logs');
 	embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
