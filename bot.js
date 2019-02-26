@@ -32,7 +32,7 @@ let channel = client.channels.get('542905235241304065');
 if(channel) {
     channel.send("Uptime  : [timeCon(process.uptime())]");
 }
-});
+
 
 // ================================================================
 
