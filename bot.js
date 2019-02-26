@@ -60,7 +60,7 @@ client.channels.get('542905235241304065').send('**🚀 [C.L.U] IS BACK ONLINE NO
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
 	     
           message.channel.sendEmbed(embed);
-   }
+   
    });
 	    
 // ==================================================================
