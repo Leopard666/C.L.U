@@ -63,6 +63,7 @@ client.on('message', message => {
                   .addField('``Bot Prefix``' , `THIS ONLY FOR ADMINS` , true)
                   .addField('``Bot Language``' , `[ Java Script ]` , true)
                   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+	          .setTimestamp()
 	          .setDescription(` Attention [The Grid™] Users 
 [C.L.U] has returned from the darkness aka back online
 It must be your lucky day :smile: `)
