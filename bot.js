@@ -40,9 +40,8 @@ function timeCon(time) {
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
 var version = '1.9';
-client.on('ready', () => {
-      const channel = client.channels.find(x => x.name === 'bot-status-logs');
-        channel.send
+client.on("message", function(message) {
+      client.channels.get(channelID).send(x => x.name === 'bot-status-logs');
 	embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
