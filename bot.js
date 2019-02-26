@@ -60,12 +60,12 @@ client.on('message', message => {
             .addField('``Bot Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node``' , `[${process.version} ]` , true)
-                  .addField('``My Prefix``' , `/` , true)
-                  .addField('``My Language``' , `[ Java Script ]` , true)
+                  .addField('``Bot Prefix``' , `/` , true)
+                  .addField('``Bot Language``' , `[ Java Script ]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
 	          .setDescription(` ``Attention The Grid Users 
 C.L.U has returned from the darkness aka back online
-It must be your lucky day :smile:`` `)
+It must be your lucky day :smile:`` `);
 
     })
 }
