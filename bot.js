@@ -26,6 +26,39 @@ const prefix = '/'
 ti={}  
 spee={};
 
+// ==================================================================
+
+client.on('ready', () => {
+  const A8tra7Room = message.guild.channels.find(x => x.name === "bot-status-logs")
+  let a8tra7 = message.content.split(' ').slice(1).join(' ')
+   var m8tr7 = message.author.id
+if(!message.guild.channels.find(x => x.name === "bot-status-logs")) return message.channel.send('i cant find `bot-status-logs` room!')
+    console.log(`Logged in as ${client.user.tag}!`);
+    console.log('')
+    console.log('')
+    console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+    console.log(`[Start] ${new Date()}`);
+    console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+    console.log('')
+    console.log('╔[════════════════════════════════════]╗');
+    console.log(`Logged in As * [ " ${client.user.username} " ]`);
+    console.log('')
+    console.log('Server Informations :')
+    console.log('')
+    console.log(`TDN - SERVERS : [ " ${client.guilds.size} " ]`);
+    console.log(`TDN - USERS : [ " ${client.users.size} " ]`);
+    console.log(`TDN - CHANNELS :  [ " ${client.channels.size} " ]`);
+    console.log('╚[════════════════════════════════════]╝')
+    console.log('')
+    console.log('╔[════════════]╗')
+    console.log('Quorra Is Online Now !')
+    console.log('╚[════════════]╝')
+    console.log('')
+    console.log('')
+});
+
+// ==================================================================
+
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
@@ -39,6 +72,8 @@ client.on('message', message => {
 	   
        }
    });
+
+// ==================================================================
 
 client.on('ready', function(){//npm i ms 
     var ms = 10000 ;
@@ -58,6 +93,7 @@ client.on('ready', function(){//npm i ms
 
 });
 
+// ==================================================================
 
 client.on('message', message => {
   var prefix ="/";
@@ -84,6 +120,8 @@ message.channel.sendEmbed(embed)
 
 }
 });
+
+// ==================================================================
 
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
@@ -122,8 +160,9 @@ client.on('message', message => {
 }
 });
 
-client.on('message', message => {
+// ==================================================================
 
+client.on('message', message => {
   if (message.author.bot) return;
  if (!message.channel.guild) return;
  if (message.content.startsWith(prefix + 'members')) {
@@ -147,6 +186,7 @@ client.on('message', message => {
  }
 });
 
+// ==================================================================
 
   client.on('message', message => {
     if (message.content.startsWith("link")) {
