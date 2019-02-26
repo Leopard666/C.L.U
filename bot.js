@@ -28,6 +28,18 @@ spee={};
 
 // ==================================================================
 
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+var version = '1.9';
 client.on('ready', () => {
       let channel = member.guild.channels.find(x => x.name === 'bot-status-logs');
     message.channel.send({
@@ -36,14 +48,14 @@ client.on('ready', () => {
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**')
-            .addField('``Uptime :``', [timeCon(process.uptime())], true)
-            .addField('``My Ping :``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
-            .addField('``RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``Bot Uptime :``', [timeCon(process.uptime())], true)
+            .addField('``Bot Ping :``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``Bot RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``Servers :``', [client.guilds.size], true)
             .addField('``Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``Users :``' ,`[ ${client.users.size} ]` , true)
-            .addField('``My Name :``' , `[ ${client.user.tag} ]` , true)
-            .addField('``My ID :``' , `[ ${client.user.id} ]` , true)
+            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
+            .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Node :``' , `[${process.version} ]` , true)
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
 	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
