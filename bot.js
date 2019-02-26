@@ -36,17 +36,19 @@ client.on('ready', () => {
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
       .addField('• 🔰| Logged in As :' , `${client.user.tag} !`)
-      .addField('• 🌹| [Start] :' , `[${new Date()}]`)
-      .addField('• 🆔 | Logged in As :' , `["${client.user.username}"]`)
-              .addField('➡| TDN - SERVERS :' , `[ " ${client.guilds.size} " ]`)                     
-                                   .addField('• 🔮| TDN - USERS :' , `["${client.users.size}"]`)
-  .addField('• 🕣| TDN - CHANNELS :' , `["${client.channels.size}"]`)
+      .addField('• 🔰| [Start] :' , `[${new Date()}]`)
+      .addField('• 🔰| Logged in As :' , `["${client.user.username}"]`)
+              .addField('🔰| TDN - SERVERS :' , `[ " ${client.guilds.size} " ]`)                     
+                                   .addField('• 🔰| TDN - USERS :' , `["${client.users.size}"]`)
+  .addField('• 🔰| TDN - CHANNELS :' , `["${client.channels.size}"]`)
 
                                      
-   .setFooter("|• C.L.U Is Online Now ! •|")
+   .setFooter("🔰 |• C.L.U Is Back Online Now ! •| 🔰")
       .setTimestamp()
  
     channel.sendEmbed(embed);
+	
+});
 	    
 // ==================================================================
 
