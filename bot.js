@@ -29,10 +29,8 @@ spee={};
 // ==================================================================
 
 client.on('ready', () => {
-  const A8tra7Room = message.guild.channels.find(x => x.name === "bot-status-logs")
-  let a8tra7 = message.content.split(' ').slice(1).join(' ')
-   var m8tr7 = message.author.id
-if(!message.guild.channels.find(x => x.name === "bot-status-logs")) return message.channel.send('i cant find `bot-status-logs` room!')
+        let modlog = client.channels.find(x => x.name === 'bot-status-logs');
+	    const embed = new Discord.RichEmbed()
     console.log(`Logged in as ${client.user.tag}!`);
     console.log('')
     console.log('')
@@ -55,6 +53,8 @@ if(!message.guild.channels.find(x => x.name === "bot-status-logs")) return messa
     console.log('╚[════════════]╝')
     console.log('')
     console.log('')
+   return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+
 });
 
 // ==================================================================
