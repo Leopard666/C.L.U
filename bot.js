@@ -44,23 +44,24 @@ function timeCon(time) {
 var version = '1.9';
 client.on('ready', function(){
 client.channels.get("542905235241304065").send("🚀 [C.L.U] IS BACK ONLINE NOW 🚀")
-	client.channel.get("542905235241304065").send({
-        embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('RANDOM')
-            .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**')
-            .addField('``Uptime``', [timeCon(process.uptime())], true)
-            .addField('``Bot RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
-            .addField('``servers``', [client.guilds.size], true)
-            .addField('``Channels :``' , `[ ${client.channels.size} ]` , true)
-            .addField('``Users :``' ,`[ ${client.users.size} ]` , true)
-            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
-            .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
-            .addField('``Node :``' , `[${process.version} ]` , true)
-                  .addField('``Bot Language :``' , `[ Java Script ]` , true)
-	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
-                  .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**    
+            🚀 [C.L.U] IS BACK ONLINE NOW 🚀
+            Uptime : [timeCon(process.uptime())]
+            Bot RAM Usage : `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`
+            servers : [client.guilds.size]
+            Channels :  `[ ${client.channels.size} ]`)
+            Users : `[ ${client.users.size} ]` 
+            Bot Name : `[ ${client.user.tag} ]`)
+            Bot ID : `[ ${client.user.id} ]` 
+            Node : `[${process.version} ]`
+            Bot Language :  `[ Java Script ]`
+	    Bot Owner :  `[<@480540559233122324>]`
+            🔰 THE GRID™ - OFFICIAL 🔰**`);
+	message.author.sendEmbed(embed)
+		   
 }) 
  });
 
