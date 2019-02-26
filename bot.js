@@ -59,7 +59,6 @@ client.channels.get("542905235241304065").send("🚀 [C.L.U] IS BACK ONLINE NOW 
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
 	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-                  message.channel.sendEmbed(embed);
 
    });
 
