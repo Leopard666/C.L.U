@@ -62,9 +62,9 @@ client.on('message', message => {
             .addField('``Bot Node``' , `[${process.version} ]` , true)
                   .addField('``Bot Prefix``' , `/` , true)
                   .addField('``Bot Language``' , `[ Java Script ]` , true)
-                  .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-	          .setDescription(` Attention The Grid™ Users 
-C.L.U has returned from the darkness aka back online
+                  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+	          .setDescription(` Attention [The Grid™] Users 
+[C.L.U] has returned from the darkness aka back online
 It must be your lucky day :smile: `)
 
     })
