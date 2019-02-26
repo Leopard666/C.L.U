@@ -30,33 +30,24 @@ spee={};
 
 client.on('ready', () => {
         let modlog = client.channels.find(x => x.name === 'bot-status-logs');
-	    const embed = new Discord.RichEmbed()
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log('')
-    console.log('')
-    console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-    console.log(`[Start] ${new Date()}`);
-    console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-    console.log('')
-    console.log('╔[════════════════════════════════════]╗');
-    console.log(`Logged in As * [ " ${client.user.username} " ]`);
-    console.log('')
-    console.log('Server Informations :')
-    console.log('')
-    console.log(`TDN - SERVERS : [ " ${client.guilds.size} " ]`);
-    console.log(`TDN - USERS : [ " ${client.users.size} " ]`);
-    console.log(`TDN - CHANNELS :  [ " ${client.channels.size} " ]`);
-    console.log('╚[════════════════════════════════════]╝')
-    console.log('')
-    console.log('╔[════════════]╗')
-    console.log('Quorra Is Online Now !')
-    console.log('╚[════════════]╝')
-    console.log('')
-    console.log('')
-   return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+	  let memberavatar = member.user.avatarURL
+    if (!channel) return;
+  let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(memberavatar)
+      .addField('• 🔰| Logged in as ${client.user.tag}! `)
+      .addField('• 🌹| [Start] ${new Date()} ')
+      .addField('• 🆔 | Logged in As * [ " ${client.user.username} " ]" )
+              .addField('➡| TDN - SERVERS : [ " ${client.guilds.size} " ]")                     
+                                   .addField('• 🔮| TDN - USERS : [ " ${client.users.size} " ]`,true)
+  .addField('• 🕣| TDN - CHANNELS :  [ " ${client.channels.size} " ] ')
 
-});
-
+                                     
+   .setFooter("|• Quorra Is Online Now ! •|")
+      .setTimestamp()
+ 
+    channel.sendEmbed(embed);
+	    
 // ==================================================================
 
 client.on('message', message => {
