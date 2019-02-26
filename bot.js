@@ -42,15 +42,15 @@ function timeCon(time) {
 var version = '1.9';
 client.on('ready', () => {
       const channel = client.channels.find(x => x.name === 'bot-status-logs');
-        channel.send(message)    
+        channel.send({
 	embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW 🚀**')
-            .addField('``Bot Uptime :``', `[timeCon(process.uptime())]`, true)
+            .addField('``Uptime``', [timeCon(process.uptime())], true)
             .addField('``Bot RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
-            .addField('``Servers :``', `[client.guilds.size]`, true)
+            .addField('``servers``', [client.guilds.size], true)
             .addField('``Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``Users :``' ,`[ ${client.users.size} ]` , true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
