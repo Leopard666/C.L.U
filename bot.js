@@ -60,7 +60,7 @@ client.on('message', message => {
             .addField('``Bot Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node``' , `[${process.version} ]` , true)
-                  .addField('``Bot Prefix``' , `/` , true)
+                  .addField('``Bot Prefix``' , `Only For Admins` , true)
                   .addField('``Bot Language``' , `[ Java Script ]` , true)
                   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
 	          .setDescription(` Attention [The Grid™] Users 
@@ -72,7 +72,7 @@ It must be your lucky day :smile: `)
 });
 
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then(m => m.delete(1000));
+client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then(m => m.delete(500));
 		   
  });
 
