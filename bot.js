@@ -29,8 +29,9 @@ spee={};
 // ==================================================================
 
 client.on('ready', () => {
-        let modlog = client.channels.find(x => x.name === 'bot-status-logs');
-  let embed = new Discord.RichEmbed()
+      let channel = member.guild.channels.find(x => x.name === 'bot-status-logs');
+     if (!channel) return;
+	let embed = new Discord.RichEmbed()
       .setAuthor(client.user.username,client.user.avatarURL)
       .setThumbnail(client.user.avatarURL)
       .setColor('RANDOM')
@@ -44,7 +45,8 @@ client.on('ready', () => {
                                      
    .setFooter("🔰 |• C.L.U Is Back Online Now ! •| 🔰")
       .setTimestamp()
-	client.channel.sendEmbed(embed)
+  
+channel.sendEmbed(embed);
 
 });
 	    
