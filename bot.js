@@ -43,24 +43,7 @@ function timeCon(time) {
 	
 var version = '1.9';
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("🚀 [C.L.U] IS BACK ONLINE NOW 🚀")
-   const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
-  .setColor('RANDOM')
-  .setDescription(`**    
-            🚀 [C.L.U] IS BACK ONLINE NOW 🚀
-            Uptime : [timeCon(process.uptime())]
-            Bot RAM Usage : `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`
-            servers : [client.guilds.size]
-            Channels :  `[ ${client.channels.size} ]`)
-            Users : `[ ${client.users.size} ]` 
-            Bot Name : `[ ${client.user.tag} ]`)
-            Bot ID : `[ ${client.user.id} ]` 
-            Node : `[${process.version} ]`
-            Bot Language :  `[ Java Script ]`
-	    Bot Owner :  `[<@480540559233122324>]`
-            🔰 THE GRID™ - OFFICIAL 🔰**`);
-	message.author.sendEmbed(embed)
+client.channels.get("542905235241304065").send("🚀 [C.L.U] IS BACK ONLINE NOW 🚀 , Uptime : [timeCon(process.uptime())], true)")
 		   
 }) 
  });
