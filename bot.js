@@ -44,7 +44,8 @@ client.on('ready', () => {
                                      
    .setFooter("🔰 |• C.L.U Is Back Online Now ! •| 🔰")
       .setTimestamp()
-	
+	message.channel.sendEmbed(embed)
+
 });
 	    
 // ==================================================================
