@@ -42,7 +42,7 @@ function timeCon(time) {
 	
 var version = '1.9';
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("		       
+client.channels.get("542905235241304065").send		       
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
@@ -58,7 +58,7 @@ client.channels.get("542905235241304065").send("
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
 	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-   ")
+  
    });
 
 // ================================================================
