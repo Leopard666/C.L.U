@@ -43,9 +43,8 @@ function timeCon(time) {
 	
 var version = '1.9';
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("🚀 [C.L.U] IS BACK ONLINE NOW 🚀 , Uptime : [timeCon(process.uptime())], true)")
+client.channels.get("542905235241304065").send("/stats").then(m => m.delete(5000));
 		   
-}) 
  });
 
 // ================================================================
