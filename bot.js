@@ -30,11 +30,9 @@ spee={};
 
 client.on('ready', () => {
         let modlog = client.channels.find(x => x.name === 'bot-status-logs');
-	  let memberavatar = member.user.avatarURL
     if (!channel) return;
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setThumbnail(memberavatar)
       .addField('• 🔰| Logged in As :' , `${client.user.tag} !`)
       .addField('• 🔰| [Start] :' , `[${new Date()}]`)
       .addField('• 🔰| Logged in As :' , `["${client.user.username}"]`)
