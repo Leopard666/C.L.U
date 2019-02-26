@@ -59,7 +59,6 @@ client.on('ready', () => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
 	          .addField('**Bot Owner** :' , `[<@480540559233122324>]` , true)
                   .setFooter('🔰 THE GRID™ - OFFICIAL 🔰')
-    })
 });
 	    
 // ==================================================================
