@@ -435,14 +435,14 @@ client.on('message', message => {
         if (message.mentions.users.size < 1) return message.reply('**You must Montion The Member To Be Reported**').catch(console.error);
          
 
-    if (!modlog) return message.reply('**Report Room is Not available**');
+    if (!modlog) return message.reply('**Report Room is Not Available**');
     const embed = new Discord.RichEmbed()
-      .setColor(0x8600AE)
+      .setColor('dc322f')
       .setTimestamp()
-      .addField('🔰• Message Type :', '⛔ Report ⛔')
-      .addField('🔰• Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
-      .addField('🔰• Report owner :', `${message.author.username}#${message.author.discriminator}`)
-      .addField('🔰• Reason :', reason);
+      .addField('🔰 • Message Type :', '⛔ Report ⛔')
+      .addField('🔰 • Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
+      .addField('🔰 • Report Owner :', `${message.author.username}#${message.author.discriminator}`)
+      .addField('🔰 • Reason :', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
       
@@ -461,13 +461,13 @@ client.on("message", message => {
         if (!reason) return message.reply('**:x: You Must Montion Yourself and Type Your Message To feedback :x:**');
         if (message.mentions.users.size < 1) return message.reply('**:x: You Must Montion Yourself To feedback :x:**').catch(console.error);
    
-    if (!modlog) return message.reply('**:x: feedback Room is Not Available :x:**');
+    if (!modlog) return message.reply('**:x: Feedback Room is Not Available :x:**');
     const embed = new Discord.RichEmbed()
-      .setColor(0x8600AE)
+      .setColor('RANDOM')
       .setTimestamp()
-      .addField('🔰• Message Type :', '❤ Feedback ❤')
-      .addField('🔰• Author name :', `${message.author.username}#${message.author.discriminator}`)
-      .addField('🔰• Feedback Message :', reason);
+      .addField('🔰 • Message Type :', '❤ Feedback ❤')
+      .addField('🔰 • Author Name :', `${message.author.username}#${message.author.discriminator}`)
+      .addField('🔰 • Feedback Message :', reason);
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
 
@@ -522,7 +522,7 @@ client.on('guildMemberAdd', member => {
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
       .addField('• 🔰| Name » ',`${member}`)
-      .addField('• 🌹| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
+      .addField('• 👥| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
 Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take a look At The Rules in **#read-me** Additional Details Can Be Found In **#announcements** . Our Support Team Is Here And Happy To Help You If You Have Any **Questions Regarding The Grid™**, Enjoy Your Stay ♥.
 💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
       .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
@@ -531,7 +531,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
   .addField('• 🕣| Time Create » ', member.user.createdAt.toLocaleString(), true)
 
                                      
-   .setFooter("|•♥•| The Grid™ |•♥•|")
+   .setFooter("❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖")
       .setTimestamp()
  
     channel.sendEmbed(embed);
@@ -541,7 +541,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our Rules Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
+  return channel.send(`**💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
 }).catch(console.error)
 })
 
