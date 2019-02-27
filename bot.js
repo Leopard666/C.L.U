@@ -46,7 +46,6 @@ client.on('message', message => {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
-	    .setAuthor(client.guild.username,client.guild.iconURL)
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
@@ -166,10 +165,8 @@ client.on('message', message => {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(5000));
     message.channel.send({
         embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
-	    .setAuthor(client.guild.name, client.guild.iconURL)
             .setTitle('**[C.L.U] STATS** ')
 	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[<@480540559233122324>]` , true)
