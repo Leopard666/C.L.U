@@ -551,7 +551,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 
 client.on("guildMemberAdd", member , => {
-  member.createDM().then(function (channel)); 
+  member.createDM().then(function (channel) 
    const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .addField('• 🔰| User Name » ',`${member}`) 
@@ -564,7 +564,7 @@ client.on("guildMemberAdd", member , => {
    channel.sendEmbed(embed);  
 }).catch(console.error)
 })
-
+});
 
 client.on('message', msg => {
 
