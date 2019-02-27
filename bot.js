@@ -83,12 +83,14 @@ client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-   if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
-   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **');
+   if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**').then(m => m.delete(60000));
+   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setTitle(`**:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:**`)
+  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+  .setTimestamp()
      message.channel.sendEmbed(embed);
 	   
        }
@@ -137,6 +139,8 @@ var embed  = new Discord.RichEmbed()
 .addField("**🌍 Others **" , message.guild.region,true)
 .addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
 .setColor('#000000')
+.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+.setTimestamp()
 message.channel.sendEmbed(embed)
 
 }
@@ -204,7 +208,8 @@ client.on('message', message => {
 **:yellow_heart: Idle**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
 **:heart: DND**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
 **:black_heart: Offline** **[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]** `)
-
+.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+.setTimestamp()
      message.channel.send()
 
      message.channel.sendEmbed(embed)
@@ -404,6 +409,8 @@ client.on('message', message => {
  Discord.RichEmbed()
  .setColor('#9F81F7')
  .setDescription(EmbedRep)
+ .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+ .setTimestamp()
  
  m.send({ embed: bc })
  msg.delete();
@@ -431,11 +438,11 @@ client.on('message', message => {
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find(x => x.name === 'reports');
-        if (!reason) return message.reply('**:x: You Must Montion The Member To Be Reported and The Reason :x:**');
+        if (!reason) return message.reply('**:x: You Must Montion The Member To Be Reported and The Reason :x:**').then(m => m.delete(60000));
         if (message.mentions.users.size < 1) return message.reply('**You must Montion The Member To Be Reported**').catch(console.error);
          
 
-    if (!modlog) return message.reply('**Report Room is Not Available**');
+    if (!modlog) return message.reply('**Report Room is Not Available**').then(m => m.delete(60000));
     const embed = new Discord.RichEmbed()
       .setColor('dc322f')
       .setTimestamp()
@@ -459,7 +466,7 @@ client.on("message", message => {
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
         let modlog = client.channels.find(x => x.name === 'feedback');
-        if (!reason) return message.reply('**:x: You Must Montion Yourself and Type Your Message To feedback :x:**');
+        if (!reason) return message.reply('**:x: You Must Montion Yourself and Type Your Message To feedback :x:**').then(m => m.delete(60000));
         if (message.mentions.users.size < 1) return message.reply('**:x: You Must Montion Yourself To feedback :x:**').catch(console.error);
    
     if (!modlog) return message.reply('**:x: Feedback Room is Not Available :x:**');
@@ -511,7 +518,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply(" **How Can I Help You With ?** ");
+    message.reply(" **How Can I Help You With ?** ").then(m => m.delete(60000));
     }
 });
 
@@ -938,7 +945,7 @@ if(!message.channel.guild) return message.reply(':no_entry: | This Command For S
 
 
  client.on('ready', () => {
- 	console.log('I am Ready !'); 
+ 	console.log('I am Ready For Fight !'); 
    });
 
 
@@ -968,7 +975,7 @@ if (command == "say") {
 
  client.on('message',async message => {
     if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**');
+        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**').then(m => m.delete(60000));
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
                msg.edit('**:arrows_counterclockwise: C.L.U Restarting..**').then(m => m.delete(5000));
@@ -1073,15 +1080,17 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-clu") {
-   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!');
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!');
+   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!').then(m => m.delete(60000));
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!').then(m => m.delete(60000));
 
-   message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **');
+   message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
+  .setTimestamp() 
+  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
   .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`).then(m => m.delete(60000))
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 	   
        }
@@ -1099,12 +1108,14 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-quorra") {
     
-   message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **');
+   message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
+  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖') 
+  .setTimestamp()
   .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`).then(m => m.delete(60000))
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 
        }
@@ -1114,12 +1125,14 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-rinzler") {
     
-   message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **');
+   message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
+  .setTimestamp()
+  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
   .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`).then(m => m.delete(60000))
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 	   
        }
@@ -1133,6 +1146,8 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
+  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+  .setTimestamp()
   .setDescription(`**
 :fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
   
@@ -1148,9 +1163,7 @@ client.on('message', message => {
 
 :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
-:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap:
-
-● The Grid™ - Official :copyright: **`);
+:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap: **`);
 
 message.author.sendEmbed(embed)
 
