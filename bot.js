@@ -119,7 +119,7 @@ client.on('ready', function(){//npm i ms
 client.on('message', message => {
   var prefix ="/";
 if(message.content.startsWith(prefix +"server")){
-if(!message.channel.guild) return message.reply('** :x: This command Only For Servers :x:**');
+if(!message.channel.guild) return message.reply('** :x: This command Only For Servers :x:**').then(m => m.delete(5000));
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
@@ -158,7 +158,7 @@ function timeCon(time) {
 var version = '2.0';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "stats")) {
-    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(5000));
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
