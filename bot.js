@@ -1080,7 +1080,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`).then(m => m.delete(60000));
+  .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`).then(m => m.delete(60000))
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`).then(m => m.delete(60000));
      message.channel.sendEmbed(embed);
 	   
