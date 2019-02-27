@@ -46,6 +46,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
+	    .setAuthor(client.guild.name, client.guild.iconURL)
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
@@ -168,6 +169,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
+	    .setAuthor(client.guild.name, client.guild.iconURL)
             .setTitle('**[C.L.U] STATS** ')
 	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[<@480540559233122324>]` , true)
@@ -202,12 +204,12 @@ client.on('message', message => {
          .setThumbnail(message.author.avatarURL)
          .setFooter(message.author.username, message.author.avatarURL)
 
-     .setDescription(`**:battery: MEMBER STATS**
+     .setDescription(`**:battery: MEMBER STATS :**
  
-**:green_heart: Online**  **[ ${message.guild.members.filter(m=>m.presence.status == 'online').size} ]**
-**:yellow_heart: Idle**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
-**:heart: DND**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
-**:black_heart: Offline** **[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]** `)
+**:green_heart: Online :**  **[ ${message.guild.members.filter(m=>m.presence.status == 'online').size} ]**
+**:yellow_heart: Idle :**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
+**:heart: DND :**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
+**:black_heart: Offline :** **[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]** `)
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
 .setTimestamp()
      message.channel.send()
@@ -446,6 +448,7 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
       .setColor('dc322f')
       .setTimestamp()
+      .setAuthor(message.guild.name, message.guild.iconURL)
       .addField('🔰 • User ID :',`${message.author.id}`)
       .addField('🔰 • Message Type :', '**⛔ Report ⛔**')
       .addField('🔰 • Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
@@ -473,6 +476,7 @@ client.on("message", message => {
     const embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setTimestamp()
+      .setAuthor(message.guild.name, message.guild.iconURL)
       .addField('🔰 • User ID :',`${message.author.id}`)
       .addField('🔰 • Message Type :', '**❤ Feedback ❤**')
       .addField('🔰 • Author Name :', `${message.author.username}#${message.author.discriminator}`)
@@ -529,6 +533,7 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
+      .setAuthor(member.guild.name, member.guild.iconURL)
       .setThumbnail(memberavatar)
       .addField('• 🔰| User Name » ',`${member}`)
       .addField('• 👥| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
@@ -550,7 +555,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
+ return channel.send(`**💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
 }).catch(console.error)
 })
 
@@ -1085,8 +1090,8 @@ client.on('message', message => {
 
    message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
+  .setAuthor(message.guild.name, message.guild.iconURL)
   .setTimestamp() 
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
   .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
@@ -1110,7 +1115,7 @@ client.on('message', message => {
     
    message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
+  .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RANDOM')
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖') 
   .setTimestamp()
@@ -1127,7 +1132,7 @@ client.on('message', message => {
     
    message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
+  .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RANDOM')
   .setTimestamp()
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
@@ -1144,7 +1149,7 @@ client.on('message', message => {
     
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
+  .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RANDOM')
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
   .setTimestamp()
