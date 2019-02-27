@@ -550,29 +550,12 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 
 
-client.on("guildMemberAdd", member , => {
-  member.createDM().then(function (channel) 
-  let memberavatar = member.user.avatarURL
-    if (!channel) return;
-  let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setAuthor(member.guild.name, member.guild.iconURL)
-      .setThumbnail(memberavatar)
-      .addField('• 🔰| User Name » ',`${member}`)
-      .addField('• 👥| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
-*💎 • 🔰 Welcome ${member} To **The Grid™ - Official**  Server - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy 💎.
-💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
-      .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
-              .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
-                                   .addField('• 🔮| Server Name » ', `${member.guild.name}`,true)
-  .addField('• 🕣| Time Create » ', member.user.createdAt.toLocaleString(), true)
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`** 💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! , Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
+}).catch(console.error)
+})
 
-                                     
-   .setFooter("❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖")
-      .setTimestamp()
- 
-    channel.sendEmbed(embed);
-});
 
 
 
