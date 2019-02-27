@@ -552,19 +552,29 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 client.on("guildMemberAdd", member , => {
   member.createDM().then(function (channel) 
-   const embed = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  .addField('• 🔰| User Name » ',`${member}`) 
-  .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
-  .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**") 
-  .setAuthor(member.guild.name, member.guild.iconURL)
-  .setTimestamp() 
-  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
-  .setTitle(`**💎 • 🔰 Welcome ${member} To **The Grid™ - Official**  Server - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy 💎**`)
-   channel.sendEmbed(embed);  
-}).catch(console.error)
-})
+  let memberavatar = member.user.avatarURL
+    if (!channel) return;
+  let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setAuthor(member.guild.name, member.guild.iconURL)
+      .setThumbnail(memberavatar)
+      .addField('• 🔰| User Name » ',`${member}`)
+      .addField('• 👥| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
+*💎 • 🔰 Welcome ${member} To **The Grid™ - Official**  Server - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! . Enjoy 💎.
+💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
+      .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
+              .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
+                                   .addField('• 🔮| Server Name » ', `${member.guild.name}`,true)
+  .addField('• 🕣| Time Create » ', member.user.createdAt.toLocaleString(), true)
+
+                                     
+   .setFooter("❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖")
+      .setTimestamp()
+ 
+    channel.sendEmbed(embed);
 });
+
+
 
 client.on('message', msg => {
 
