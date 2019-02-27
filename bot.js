@@ -553,7 +553,6 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   let memberavatar = member.user.avatarURL
-    if (!channel) return;
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setAuthor(member.guild.name, member.guild.iconURL)
@@ -572,7 +571,6 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
       .setTimestamp()
  
     channel.sendEmbed(embed);
-}
 });
 
 
