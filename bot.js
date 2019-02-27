@@ -46,7 +46,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
-	    .setAuthor(client.guild.name, client.guild.iconURL)
+	    .setAuthor(client.guild.name,client.guild.iconURL)
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
