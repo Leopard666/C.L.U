@@ -552,7 +552,13 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`** 💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! , Enjoy ♥ [ And You Are Number : "${member.guild.memberCount}" ] 💎**`)
+  return channel.send(`** 
+💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! , Enjoy ♥
+[ And You Are Number : "${member.guild.memberCount}" ]
+.setTimestamp()
+.setFooter("❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖")
+.setThumbnail(memberavatar)
+💎**`)
 }).catch(console.error)
 })
 
