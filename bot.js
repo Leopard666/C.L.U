@@ -1103,7 +1103,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`).then(m => m.delete(60000));
+  .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`).then(m => m.delete(60000))
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`).then(m => m.delete(60000));
      message.channel.sendEmbed(embed);
 
@@ -1118,7 +1118,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`).then(m => m.delete(60000));
+  .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`).then(m => m.delete(60000))
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`).then(m => m.delete(60000));
      message.channel.sendEmbed(embed);
 	   
