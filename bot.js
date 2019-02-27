@@ -572,6 +572,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
       .setTimestamp()
  
     channel.sendEmbed(embed);
+}
 });
 
 
