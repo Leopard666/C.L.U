@@ -83,12 +83,12 @@ client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-   if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
-   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **');
+   if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**').then(m => m.delete(5000));
+   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **').then(m => m.delete(5000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:**`)
+  .setTitle(`**:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:**`).then(m => m.delete(5000));
      message.channel.sendEmbed(embed);
 	   
        }
@@ -191,7 +191,7 @@ client.on('message', message => {
   if (message.author.bot) return;
  if (!message.channel.guild) return;
  if (message.content.startsWith(prefix + 'members')) {
- if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**');
+ if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**').then(m => m.delete(6000));
      if (!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
          .setColor('RANDOM')
@@ -225,7 +225,7 @@ client.on('message', message => {
     )
       message.author.send(`** :link: TIME FOR THE LINK : " 1DAY " :link:**`)
 
-      message.channel.send("**:link: Invite Linke Sent In DM Successfully**")
+      message.channel.send("**:link: Invite Linke Sent In DM Successfully**").then(m => m.delete(6000));
     }
   });
 
@@ -971,10 +971,10 @@ if (command == "say") {
         if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**');
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: C.L.U Restarting..**');
+               msg.edit('**:arrows_counterclockwise: C.L.U Restarting..**').then(m => m.delete(5000));
             },1000);
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: C.L.U Restarting...**');
+               msg.edit('**:arrows_counterclockwise: C.L.U Restarting...**').then(m => m.delete(5000));
             },2000);
         });
         console.log(`${message.author.tag} [ ${message.author.id} ] C.L.U Has Restarted Successfully.`);
@@ -1073,15 +1073,15 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-clu") {
-   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!'); 
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!');
+   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!').then(m => m.delete(60000));
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!').then(m => m.delete(60000));
 
-   message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **');
+   message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`) 
+  .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`).then(m => m.delete(60000));
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`).then(m => m.delete(60000));
      message.channel.sendEmbed(embed);
 	   
        }
@@ -1099,12 +1099,12 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-quorra") {
     
-   message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **');
+   message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
+  .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`).then(m => m.delete(60000));
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`).then(m => m.delete(60000));
      message.channel.sendEmbed(embed);
 
        }
@@ -1114,12 +1114,12 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-rinzler") {
     
-   message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **');
+   message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`) 
+  .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`).then(m => m.delete(60000));
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`).then(m => m.delete(60000));
      message.channel.sendEmbed(embed);
 	   
        }
@@ -1129,7 +1129,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite") {
     
-   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
+   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
