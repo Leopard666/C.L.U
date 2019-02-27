@@ -440,7 +440,7 @@ client.on('message', message => {
       .setColor('dc322f')
       .setTimestamp()
       .addField('🔰 • User ID :',`${message.author.id}`)
-      .addField('🔰 • Message Type :', '⛔ Report ⛔')
+      .addField('🔰 • Message Type :', '**⛔ Report ⛔**')
       .addField('🔰 • Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
       .addField('🔰 • Report Owner :', `${message.author.username}#${message.author.discriminator}`)
       .addField('🔰 • Reason :', reason);
@@ -467,7 +467,7 @@ client.on("message", message => {
       .setColor('RANDOM')
       .setTimestamp()
       .addField('🔰 • User ID :',`${message.author.id}`)
-      .addField('🔰 • Message Type :', '❤ Feedback ❤')
+      .addField('🔰 • Message Type :', '**❤ Feedback ❤**')
       .addField('🔰 • Author Name :', `${message.author.username}#${message.author.discriminator}`)
       .addField('🔰 • Feedback Message :', reason);
       message.delete()
