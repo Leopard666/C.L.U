@@ -552,16 +552,27 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`** 
-💎 Welcome ${member} To 🔰 • ${member.guild.name} Server • 🔰 - Please Read Our [Rules] Before Do Something Else And Respect The Other Members Within The Community ! , Enjoy ♥
-[ And You Are Number : "${member.guild.memberCount}" ]
-.setTimestamp()
-.setFooter("❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖")
-.setThumbnail(memberavatar)
-💎**`)
-}).catch(console.error)
-})
+  let memberavatar = member.user.avatarURL
+    if (!channel) return;
+  let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setAuthor(member.guild.name, member.guild.iconURL)
+      .setThumbnail(memberavatar)
+      .addField('• 🔰| User Name » ',`${member}`)
+      .addField('• 👥| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
+Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take a look At The Rules in **#read-me** Additional Details Can Be Found In **#announcements** . Our Support Team Is Here And Happy To Help You If You Have Any **Questions Regarding The Grid™**, Enjoy Your Stay ♥.
+💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
+      .addField('• 🆔| User ID » ', "**[" + `${member.id}` + "]**" )
+              .addField('➡| You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
+                                   .addField('• 🔮| Server Name » ', `${member.guild.name}`,true)
+  .addField('• 🕣| Time Create » ', member.user.createdAt.toLocaleString(), true)
 
+                                     
+   .setFooter("❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖")
+      .setTimestamp()
+ 
+    channel.sendEmbed(embed);
+});
 
 
 
