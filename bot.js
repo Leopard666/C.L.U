@@ -439,6 +439,7 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
       .setColor('dc322f')
       .setTimestamp()
+      .addField('🔰 • User ID :',`${message.author.id}`)
       .addField('🔰 • Message Type :', '⛔ Report ⛔')
       .addField('🔰 • Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
       .addField('🔰 • Report Owner :', `${message.author.username}#${message.author.discriminator}`)
@@ -453,7 +454,7 @@ client.on('message', message => {
 client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/feedback')) {
-      message.author.send(`**🔰 • Thank You For Making Grid The Best Place, (We Will Check Your Feedback As Soon Possible) • 🔰**`)
+      message.author.send(`**🔰 • Thank You For Making Grid The Best Place ❤, (We Will Check Your Feedback As Soon Possible) • 🔰**`)
 
         let user = message.mentions.users.first();
         let reason = args.slice(1).join(' ');
@@ -465,6 +466,7 @@ client.on("message", message => {
     const embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setTimestamp()
+      .addField('🔰 • User ID :',`${message.author.id}`)
       .addField('🔰 • Message Type :', '❤ Feedback ❤')
       .addField('🔰 • Author Name :', `${message.author.username}#${message.author.discriminator}`)
       .addField('🔰 • Feedback Message :', reason);
@@ -521,7 +523,7 @@ client.on('guildMemberAdd', member => {
   let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(memberavatar)
-      .addField('• 🔰| Name » ',`${member}`)
+      .addField('• 🔰| User Name » ',`${member}`)
       .addField('• 👥| Welcome User » ' , `💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎 
 Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take a look At The Rules in **#read-me** Additional Details Can Be Found In **#announcements** . Our Support Team Is Here And Happy To Help You If You Have Any **Questions Regarding The Grid™**, Enjoy Your Stay ♥.
 💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
