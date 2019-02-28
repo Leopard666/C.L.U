@@ -1170,6 +1170,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setAuthor(message.guild.name, message.guild.iconURL)
+   .setThumbnail(client.user.avatarURL)
   .setTimestamp() 
   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
   .addField('C.L.U - VERSION :' , `**[ v3.0 ]**`)
@@ -1195,6 +1196,7 @@ client.on('message', message => {
    message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
+  .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰') 
   .addField('QUORRA - VERSION :' , `**[ v1.3 ]**`)
@@ -1213,6 +1215,7 @@ client.on('message', message => {
    message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
+  .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
   .setTimestamp()
   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
@@ -1234,6 +1237,7 @@ client.on('message', message => {
   .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+  .addField('``👑 BOT - OWNER 👑 :``' , `[<@480540559233122324>]`)
   .setTimestamp()
   .setDescription(`**
 :fire: [❖══ ● THE GRID™ [BOTS INVITES] ● ══❖] :fire:   
@@ -1248,9 +1252,7 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖  
 
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ─════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ════─ :zap: **`);
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`);
 
 message.author.sendEmbed(embed)
 
