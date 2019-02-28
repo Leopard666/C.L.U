@@ -199,6 +199,7 @@ client.on('message', message => {
             .addField(":id:  الايدي", `**[ ${msg.author.id} ]**`, true)
             .setColor("RANDOM")
             .setFooter(msg.author.username , msg.author.avatarURL)
+	    .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
             .setThumbnail(`${msg.author.avatarURL}`)
             .setTimestamp()
             .setURL(`${msg.author.avatarURL}`)
@@ -255,6 +256,7 @@ if(message.content.startsWith(prefix+"userinfo")) {
   .addField('**UserInfo:**', `**name:** ${user.username}#${user.discriminator}\n**JoinedDiscord:** ${joineddiscord}\n**LastMessage:** ${messag}\n**Playing:** ${game}\n**Status:** ${status}\n**Bot?** ${user.bot}`, true)
   .setThumbnail(user.displayAvatarURL)
   .addField(`Roles:`, message.guild.members.get(user.id).roles.array(role => role.name).slice(1).join(', '))
+  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
   .addField('DiscordInfo:', `**Discriminator:** #${user.discriminator}\n**ID:** ${user.id}\n**Username:** ${user.username}`)
   .setAuthor(`معلومات ${user.username}`, user.displayAvatarURL)
   .setColor(stat);
@@ -282,7 +284,7 @@ client.on('message', message => {
 **:yellow_heart: Idle :**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
 **:heart: DND :**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
 **:black_heart: Offline :** **[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]** `)
-.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+.setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
 .setTimestamp()
      message.channel.send()
 
@@ -483,7 +485,7 @@ client.on('message', message => {
  .addField('🔰السيرفر🔰', message.guild.name)
  .addField('🚩المرسل🚩', message.author.username)
  .setDescription(EmbedRep)
- .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+ .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
  .setTimestamp()
  
  m.send({ embed: bc })
@@ -520,12 +522,13 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
       .setColor('dc322f')
       .setTimestamp()
+      .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
       .setAuthor(message.guild.name, message.guild.iconURL)
       .addField('🔰 • User ID :',`${message.author.id}`)
       .addField('🔰 • Message Type :', '**⛔ Report ⛔**')
       .addField('🔰 • Member Reported :', `${user.username}#${user.discriminator} (${user.id}`)
       .addField('🔰 • Report Owner :', `${message.author.username}#${message.author.discriminator}`)
-      .addField('🔰 • Reason :', reason);
+      .addField('🔰 • Reason :', reason);  
       message.delete()
       return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
       
@@ -547,7 +550,8 @@ client.on("message", message => {
     if (!modlog) return message.reply('**:x: Feedback Room is Not Available :x:**');
     const embed = new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setTimestamp()
+      .setTimestamp()  
+      .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
       .setAuthor(message.guild.name, message.guild.iconURL)
       .addField('🔰 • User ID :',`${message.author.id}`)
       .addField('🔰 • Message Type :', '**❤ Feedback ❤**')
@@ -943,6 +947,7 @@ client.on('message', message => {
    .setAuthor(`KICKED!`, user.displayAvatarURL)
    .setColor("RANDOM")
    .setTimestamp()
+    .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
    .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
    .addField("**By:**", '**[ ' + `${message.author.tag}` + ' ]**')
    .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
@@ -1056,10 +1061,10 @@ if (command == "say") {
         if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**').then(m => m.delete(60000));
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: C.L.U Restarting..**').then(m => m.delete(5000));
+               msg.edit('**:arrows_counterclockwise: C.L.U IS Restarting..**').then(m => m.delete(5000));
             },1000);
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: C.L.U Restarting...**').then(m => m.delete(5000));
+               msg.edit('**:arrows_counterclockwise: C.L.U IS Restarting...**').then(m => m.delete(5000));
             },2000);
         });
         console.log(`${message.author.tag} [ ${message.author.id} ] C.L.U Has Restarted Successfully.`);
@@ -1158,15 +1163,16 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-clu") {
-   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!').then(m => m.delete(60000));
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!').then(m => m.delete(60000));
+   if(!message.channel.guild) return message.reply(':no_entry: | This Command For Owners Only!').then(m => m.delete(60000));
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You Dont Have **MANAGE_MESSAGES** Permission!').then(m => m.delete(60000));
 
    message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setAuthor(message.guild.name, message.guild.iconURL)
   .setTimestamp() 
-  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+  .addField('C.L.U - VERSION :' , `**[ v3.0 ]**`)
   .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
@@ -1190,7 +1196,8 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RANDOM')
-  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖') 
+  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰') 
+  .addField('QUORRA - VERSION :' , `**[ v1.3 ]**`)
   .setTimestamp()
   .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
@@ -1208,7 +1215,8 @@ client.on('message', message => {
   .setAuthor(message.guild.name, message.guild.iconURL)
   .setColor('RANDOM')
   .setTimestamp()
-  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+  .addField('RINZLER - VERSION :' , `**[ v1.2 ]**`)
   .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
@@ -1223,11 +1231,12 @@ client.on('message', message => {
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL)
+  .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
-  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
   .setTimestamp()
   .setDescription(`**
-:fire: [❖══ ● THE GRID™ BOT COMMANDS LIST FOR INVITE ● ══❖] :fire:   
+:fire: [❖══ ● THE GRID™ [BOTS INVITES] ● ══❖] :fire:   
   
 ❖═════════════════════════════════════❖  
 
