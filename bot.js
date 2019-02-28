@@ -403,9 +403,10 @@ client.on('message', message => {
  let EmbedRep = args.replace('{server}' ,message.guild.name).replace('{user}', m).replace('{sender}', `${message.author}`)
  var bc = new
  Discord.RichEmbed()
- .setColor('#9F81F7')
- .setThumbnail("https://dumielauxepices.net/sites/default/files/heart-icons-message-636055-9011668.png")
+ .setColor('RANDOM')
  .setFooter(`📢|TG™ - BroadCast|📢`)
+ .addField('🔰السيرفر🔰', message.guild.name)
+ .addField('🚩المرسل🚩', message.author.username)
  .setDescription(EmbedRep)
  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
  .setTimestamp()
