@@ -190,6 +190,81 @@ client.on('message', message => {
 
 // ==================================================================
 
+    client.on("message", msg => {
+             var prefix = "/";
+    if(msg.content.startsWith (prefix + "id")) {
+      if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط :x:**').then(m => m.delete(5000));
+        const embed = new Discord.RichEmbed();
+    embed.addField(":cloud_tornado:  الاسم", `**[ ${msg.author.username}#${msg.author.discriminator} ]**`, true)
+            .addField(":id:  الايدي", `**[ ${msg.author.id} ]**`, true)
+            .setColor("RANDOM")
+            .setFooter(msg.author.username , msg.author.avatarURL)
+            .setThumbnail(`${msg.author.avatarURL}`)
+            .setTimestamp()
+            .setURL(`${msg.author.avatarURL}`)
+            .addField(':spy:  الحالة', `**[ ${msg.author.presence.status.toUpperCase()} ]**`, true)
+            .addField(':satellite_orbital:   يلعب', `**[ ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name} ]**`, true)
+            .addField(':military_medal:  الرتب', `**[ ${msg.member.roles.filter(r => r.name).size} ]**`, true)
+            .addField(':robot:  هل هو بوت', `**[ ${msg.author.bot.toString().toUpperCase()} ]**`, true);
+        msg.channel.send({embed: embed})
+        }
+  });
+
+
+// ==================================================================
+
+
+client.on('message' , message => {
+    var prefix = "/";
+if(message.content.startsWith(prefix+"userinfo")) {
+    let user = message.mentions.users.first() || message.author;
+    const joineddiscord = (user.createdAt.getDate() + 1) + '-' + (user.createdAt.getMonth() + 1) + '-' + user.createdAt.getFullYear() + ' | ' + user.createdAt.getHours() + ':' + user.createdAt.getMinutes() + ':' + user.createdAt.getSeconds();
+    message.delete();
+    let game;
+    if (user.presence.game === null) {
+        game = 'لا يلعب حاليا.';
+    } else {
+        game = user.presence.game.name;
+    }
+    let messag;
+    if (user.lastMessage === null) {
+        messag = 'لم يرسل رسالة. ';
+    } else {
+        messag = user.lastMessage;
+    }
+    let status;
+    if (user.presence.status === 'online') {
+        status = ':green_heart:';
+    } else if (user.presence.status === 'dnd') {
+        status = ':heart:';
+    } else if (user.presence.status === 'idle') {
+        status = ':yellow_heart:';
+    } else if (user.presence.status === 'offline') {
+        status = ':black_heart:';
+    }
+    if (user.presence.status === 'offline') {
+        stat = 0x000000;
+    } else if (user.presence.status === 'online') {
+        stat = 0x00AA4C;
+    } else if (user.presence.status === 'dnd') {
+        stat = 0x9C0000;
+    } else if (user.presence.status === 'idle') {
+        stat = 0xF7C035;
+    }
+    const embed = new Discord.RichEmbed()
+  .addField('**UserInfo:**', `**name:** ${user.username}#${user.discriminator}\n**JoinedDiscord:** ${joineddiscord}\n**LastMessage:** ${messag}\n**Playing:** ${game}\n**Status:** ${status}\n**Bot?** ${user.bot}`, true)
+  .setThumbnail(user.displayAvatarURL)
+  .addField(`Roles:`, message.guild.members.get(user.id).roles.array(role => role.name).slice(1).join(', '))
+  .addField('DiscordInfo:', `**Discriminator:** #${user.discriminator}\n**ID:** ${user.id}\n**Username:** ${user.username}`)
+  .setAuthor(`معلومات ${user.username}`, user.displayAvatarURL)
+  .setColor(stat);
+    message.channel.send({embed})
+  .catch(e => logger.error(e));
+}
+ });
+
+// ==================================================================
+
 client.on('message', message => {
   if (message.author.bot) return;
  if (!message.channel.guild) return;
