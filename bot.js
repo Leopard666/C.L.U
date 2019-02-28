@@ -407,6 +407,8 @@ client.on('message', message => {
  var bc = new
  Discord.RichEmbed()
  .setColor('#9F81F7')
+ .setThumbnail("https://dumielauxepices.net/sites/default/files/heart-icons-message-636055-9011668.png")
+ .setFooter(`📢|TG™ - BroadCast|📢`)
  .setDescription(EmbedRep)
  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
  .setTimestamp()
