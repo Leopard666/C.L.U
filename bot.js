@@ -89,10 +89,10 @@ client.on('message', message => {
   .setThumbnail(client.user.avatarURL)
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
-  .setTitle(`**:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:**`)
+  .setTitle(`**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner:**`)
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
   .setDescription(`** 
-  :tools: ● /STATS - /SERVER - /RESTART - /MEMBERS - /ID - /USERINFO - /NEWS - /BC - /BAN - /LOCK - /CLEAR - /WR ● :tools:**`)
+  :tools: ● /STATS - /SERVER - /RESTART - /MEMBERS - /ID - /USERINFO - /NEWS - /BC - /BAN - /LOCK - /CLEAR - /WR  - /VKICK ● :tools:**`)
   .setTimestamp()
   .addField('**BOT - VERSION** :robot: :' , `[ 3.0 ]`)
   .addField('**BOT - OWNER** 👑 :' , `[<@480540559233122324>]`)
