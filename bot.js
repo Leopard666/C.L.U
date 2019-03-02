@@ -108,7 +108,9 @@ client.on('message', message => {
 
 ● In the meantime I have notified "The Rare Ranger" that the bot has gone offline`)
 	    
-});	    
+    })
+}
+});    
 	    
 	    
 // ================================================================
