@@ -86,11 +86,16 @@ client.on('message', message => {
    if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**').then(m => m.delete(60000));
    message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
+  .setThumbnail(client.user.avatarURL)
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setTitle(`**:arrow_right: :x: THIS COMMANDS ONLY FOR BOT OWNER/CREATOR :x:**`)
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+  .setDescription(`** 
+  :tools: ● /STATS - /SERVER - /RESTART - /MEMBERS - /ID - /USERINFO - /NEWS - /BC - /BAN - /LOCK - /CLEAR - /WR ● :tools:**`)
   .setTimestamp()
+  .addField('**BOT - VERSION** :robot: :' , `[ 3.0 ]`)
+  .addField('**BOT - OWNER** 👑 :' , `[<@480540559233122324>]`)
      message.channel.sendEmbed(embed);
 	   
        }
@@ -130,16 +135,18 @@ const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
 const days = millis / 1000 / 60 / 60 / 24;
 let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
 var embed  = new Discord.RichEmbed()
+.setThumbnail(client.user.avatarURL)
 .setAuthor(message.guild.name, message.guild.iconURL)
-.addField("**🆔 Server ID:**", message.guild.id,true)
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others **" , message.guild.region,true)
-.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
-.setColor('#000000')
+.addField("**🆔 Server ID :**", message.guild.id,true)
+.addField("**📅 Created On :**", message.guild.createdAt.toLocaleString(),true)
+.addField("**👥 Members :**",`[${message.guild.memberCount}]`,true)
+.addField('**💬 Channels :**',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
+.addField("**🌍 Others :**" , message.guild.region,true)
+.addField("** 🔐 Roles :**",`**[${message.guild.roles.size}]** Role `,true)
+.setColor('RANDOM')
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+.addField('**:robot: BOT - VERSION :**' , `[ 3.0 ]`)
+.addField('**👑 BOT - OWNER :**' , `[<@480540559233122324>]`)
 .setTimestamp()
 message.channel.sendEmbed(embed)
 
