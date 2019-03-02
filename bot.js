@@ -113,9 +113,9 @@ client.on('message', message => {
 	    
 // ================================================================
 
-client.on('disconnect', function(){
+client.on("disconnect", data => {
 client.channels.get("542905235241304065").send("/C.L.U IS OFFLINE NOW").then(m => m.delete(500));
-	    
+}	    
 ));
 
 // ================================================================
