@@ -84,7 +84,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
    if(message.author.id !== "480540559233122324") return message.reply('**:x: SORRY MATE THIS COMMANDS ONLY FOR BOT OWNER :x:**').then(m => m.delete(60000));
-   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner: **').then(m => m.delete(60000));
+   message.channel.send('**:beginner: [❖══ ● C.L.U SYSTEM BOT V3.0 - 2019© ● ══❖] :beginner: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
   .setAuthor(message.author.username,message.author.avatarURL)
@@ -141,7 +141,7 @@ var embed  = new Discord.RichEmbed()
 .addField("**📅 Created On :**", message.guild.createdAt.toLocaleString(),true)
 .addField("**👥 Members :**",`[${message.guild.memberCount}]`,true)
 .addField('**💬 Channels :**',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others :**" , message.guild.region,true)
+.addField("**🌍 Server Region :**" , message.guild.region,true)
 .addField("** 🔐 Roles :**",`**[${message.guild.roles.size}]** Role `,true)
 .setColor('RANDOM')
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
