@@ -26,7 +26,7 @@ const client = new Discord.Client();
 const prefix = '/'
 ti={}  
 spee={};
-});
+
 // ================================================================
 
 function timeCon(time) {
@@ -116,7 +116,7 @@ client.on('message', message => {
 	    
 // ================================================================
 
-client.on('error', function(){ 
+client.on('reconnect', function(){ 
 client.channels.get("542905235241304065").send("/C.L.U IS OFFLINE NOW").then(m => m.delete(500));
 		   
  });
