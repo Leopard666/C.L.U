@@ -93,10 +93,10 @@ client.on('message', message => {
             .setColor('dc322f')
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	    .setTimestamp()
-            .setTitle('**:robot [C.L.U] IS OFFLINE NOW :robot:** ')
+            .setTitle('**:robot: [C.L.U] IS OFFLINE NOW :robot:** ')
 	    .setDescription(`
 
-● Attention The Grid™ Bot Users C.L.U Has Gone **Offline** ●
+● Attention [The Grid™] Bot Users [C.L.U] Has Gone : **Offline** ●
 
 ● If the bot has gone unexpected offline, it could be 1 of the following errors :
 
@@ -106,7 +106,8 @@ client.on('message', message => {
 
 ● I will post a message in this channel once the bot comes back online so keep checking in this channel or check the user list.
 
-● In the meantime I have notified "The Rare Ranger" that the bot has gone offline`)
+● In the meantime I have notified "The Rare Ranger" that the bot has gone offline.`)
+	    
 	    
     })
 }
@@ -120,7 +121,6 @@ client.channels.get("542905235241304065").send("/C.L.U IS OFFLINE NOW").then(m =
 		   
  });
 	
-
 // ================================================================
 
 client.on('message', message => {
