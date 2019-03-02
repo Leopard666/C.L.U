@@ -58,6 +58,7 @@ client.on('message', message => {
             .addField('``TG - Servers :``', [client.guilds.size], true)
             .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
+	    .addField('``TG Server Region :``' , message.guild.region,true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[${process.version} ]` , true)
@@ -65,9 +66,9 @@ client.on('message', message => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
 	          .setTimestamp()
-	          .setDescription(` **● Attention [The Grid™] Users 
+	          .setDescription(`**:robot: ● Attention [The Grid™] Users 
 [C.L.U] Has Returned From The Darkness Aka Back Online
-It Must Be Your Lucky Day ! ●** `)
+It Must Be Your Lucky Day ! ● :robot:** `)
 
     })
 }
@@ -1249,15 +1250,15 @@ client.on('message', message => {
   .addField('**BOT - OWNER** 👑 :' , `[<@480540559233122324>]`)
   .setTimestamp()
   .setDescription(`**
-:fire: [❖═══ ● THE GRID™ [BOTS INVITES] ● ═══❖] :fire:   
+:fire: [❖════ ● THE GRID™ [BOTS INVITES] ● ════❖] :fire:   
   
 ❖═════════════════════════════════════❖  
 
-● :one: - :rainbow: : /invite-quorra :arrow_right: To Invite [Quorra] RainBow Bot ●
+● :one: - :rainbow: : /invite-quorra :arrow_right: To Invite [Quorra] RainBow Bot
 
-● :two: - :headphones: : /invite-rinzler :arrow_right: To Invite [Rinzler] Music Bot ●
+● :two: - :headphones: : /invite-rinzler :arrow_right: To Invite [Rinzler] Music Bot
 
-● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
+● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx
 
 ❖═════════════════════════════════════❖  
 
