@@ -48,7 +48,7 @@ client.on('message', message => {
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('RANDOM')
+            .setColor('859900')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
 	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[<@480540559233122324>]` , true)
@@ -74,10 +74,49 @@ It Must Be Your Lucky Day ! ● ** `)
 }
 });
 
+// ================================================================
+
 client.on('ready', function(){
 client.channels.get("542905235241304065").send("/C.L.U IS BACK ONLINE NOW").then(m => m.delete(500));
 		   
  });
+
+// ================================================================
+
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "C.L.U IS OFFLINE NOW")) {
+    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('dc322f')
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**:robot [C.L.U] IS OFFLINE NOW :robot:** ')
+	    .setDescription(`
+
+● Attention The Grid™ Bot Users C.L.U Has Gone **Offline** ●
+
+● If the bot has gone unexpected offline, it could be 1 of the following errors :
+
+● 1. A bot/server crash or New Updated 
+● 2. Discord has issues (check if other bots are online or offline)
+● 3. Discord deleted the the bot tokens (owner will fix asap)
+
+● I will post a message in this channel once the bot comes back online so keep checking in this channel or check the user list.
+
+● In the meantime I have notified "The Rare Ranger" that the bot has gone offline`);
+	    
+});	    
+	    
+	    
+// ================================================================
+
+client.on('disconnect', function(){
+client.channels.get("542905235241304065").send("/C.L.U IS OFFLINE NOW").then(m => m.delete(500));
+	    
+));
 
 // ================================================================
 
