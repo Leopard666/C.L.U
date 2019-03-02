@@ -48,7 +48,7 @@ client.on('message', message => {
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('859900')
+            .setColor('RANDOM')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
 	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[<@480540559233122324>]` , true)
@@ -62,13 +62,13 @@ client.on('message', message => {
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[${process.version} ]` , true)
-                  .addField('``Bot Prefix :``' , `👑 THIS ONLY FOR ADMINS 👑` , true)
+                  .addField('``Bot Prefix :``' , `👑 FOR ADMINS 👑` , true)
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
-                  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+                  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
 	          .setDescription(`**:robot: ● Attention [The Grid™] Users 
 [C.L.U] Has Returned From The Darkness Aka Back Online
-It Must Be Your Lucky Day ! ● :robot:** `)
+It Must Be Your Lucky Day ! ● ** `)
 
     })
 }
@@ -178,6 +178,7 @@ client.on('message', message => {
             .setTitle('**[C.L.U] STATS** ')
 	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[<@480540559233122324>]` , true)
+	    .addField('``TG Server Region :``' , message.guild.region,true)
             .addField('``Bot Uptime :``', [timeCon(process.uptime())], true)
             .addField('``Bot Ping :``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``Bot RAM Usage :``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
@@ -189,7 +190,7 @@ client.on('message', message => {
             .addField('``Bot Node :``' , `[${process.version} ]` , true)
                   .addField('``Bot Prefix :``' , `/` , true)
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
-                  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+	          .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
 
     })
