@@ -100,7 +100,7 @@ client.on('message', message => {
 
 ● If the bot has gone unexpected offline, it could be 1 of the following errors :
 
-● 1. A bot/server crash or New Updated 
+● 1. A Bot/Server Crash or New Updated 
 ● 2. Discord has issues (check if other bots are online or offline)
 ● 3. Discord deleted the the bot tokens (owner will fix asap)
 
@@ -116,7 +116,7 @@ client.on('message', message => {
 	    
 // ================================================================
 
-client.on('disconnect', function(){ 
+client.on('error', function(){ 
 client.channels.get("542905235241304065").send("/C.L.U IS OFFLINE NOW").then(m => m.delete(500));
 		   
  });
