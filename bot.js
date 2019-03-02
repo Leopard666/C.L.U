@@ -26,7 +26,7 @@ const client = new Discord.Client();
 const prefix = '/'
 ti={}  
 spee={};
-
+});
 // ================================================================
 
 function timeCon(time) {
