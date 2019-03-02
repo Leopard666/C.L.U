@@ -106,7 +106,7 @@ client.on('message', message => {
 
 ● I will post a message in this channel once the bot comes back online so keep checking in this channel or check the user list.
 
-● In the meantime I have notified "The Rare Ranger" that the bot has gone offline`);
+● In the meantime I have notified "The Rare Ranger" that the bot has gone offline`)
 	    
 });	    
 	    
