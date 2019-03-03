@@ -1235,6 +1235,7 @@ client.on('message', message => {
   .addField('● C.L.U - VERSION :robot: :' , `**[ v3.0 ]**`)
   .addField('● C.L.U - CMD :keyboard: :' , `**/help**`) 
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
+  .setAuthor(message.author.username,message.author.avatarURL)
   .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
@@ -1262,6 +1263,7 @@ client.on('message', message => {
   .addField('● QUORRA - VERSION :robot: :' , `**[ v1.3 ]**`)
   .addField('● QUORRA - CMD :keyboard: :' , `**$help**`)
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
+  .setAuthor(message.author.username,message.author.avatarURL)
   .setTimestamp()
   .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
@@ -1282,6 +1284,7 @@ client.on('message', message => {
   .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
   .addField('● RINZLER - VERSION :robot: :' , `**[ v1.2 ]**`)
   .addField('● RINZLER - CMD :keyboard: :' , `**-help**`)
+  .setAuthor(message.author.username,message.author.avatarURL)
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
   .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
@@ -1301,6 +1304,7 @@ client.on('message', message => {
   .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
   .addField('● QUORRA - VERSION :robot: :' , `**[ v2.0 ]**`)
   .addField('● RINZLER - VERSION :robot: :' , `**[ v1.2 ]**`)
+  .setAuthor(message.author.username,message.author.avatarURL)
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
   .setTimestamp()
   .setDescription(`**
