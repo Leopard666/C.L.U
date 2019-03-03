@@ -1301,7 +1301,6 @@ client.on('message', message => {
   .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
   .addField('● QUORRA - VERSION :robot: :' , `**[ v2.0 ]**`)
   .addField('● RINZLER - VERSION :robot: :' , `**[ v1.2 ]**`)
-  .setAuthor(message.author.username,message.author.avatarURL)
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
   .setTimestamp()
   .setDescription(`**
