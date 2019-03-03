@@ -1228,6 +1228,7 @@ client.on('message', message => {
 
    message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
+  .setAuthor(client.user.username,client.user.avatarURL)
   .setColor('RANDOM')
   .setThumbnail(client.user.avatarURL)
   .setTimestamp() 
@@ -1256,6 +1257,7 @@ client.on('message', message => {
     
    message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
+  .setAuthor(client.user.username,client.user.avatarURL)
   .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
   .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰') 
@@ -1276,6 +1278,7 @@ client.on('message', message => {
     
    message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
+  .setAuthor(client.user.username,client.user.avatarURL)
   .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
   .setTimestamp()
@@ -1297,6 +1300,7 @@ client.on('message', message => {
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
+  .setAuthor(client.user.username,client.user.avatarURL)
   .setColor('RANDOM')
   .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
   .addField('● QUORRA - VERSION :robot: :' , `**[ v2.0 ]**`)
