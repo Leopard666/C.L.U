@@ -1,4 +1,8 @@
-// THIS BOT [C.L.U] CREATED BY THE RARER RARE RANGER - 2018 - 2019©
+// ==================================================================
+
+ // THIS BOT [C.L.U] CREATED BY [THE RARE RANGER] - 2019© //
+////////////// 🔰 THE DAMNATION™ & THE GRID™ 🔰 //////////////
+
 // ==================================================================
 
 const Discord = require('discord.js');
@@ -371,6 +375,7 @@ client.on('message', message => {
   });
 
 
+// ==================================================================
 
   const codes = {
     ' ': '   ',
@@ -412,6 +417,8 @@ client.on('message', message => {
   };
   });
 
+// ==================================================================
+
 client.on('message', message => { 
     var prefix = "/";
  let args = message.content.split(' ').slice(1);
@@ -428,6 +435,8 @@ client.on('message', message => {
         });
 }
 });
+
+// ==================================================================
 
  client.on('message', message => {
 if(message.content.startsWith(prefix +'news')) {
@@ -480,6 +489,7 @@ msg.delete();
 }			     
 });                        
   
+// ==================================================================
 
 client.on('message', message => {
     if (message.channel.id == "541631206735872000") {
@@ -505,6 +515,7 @@ client.on('message', message => {
     }
 });
 
+// ==================================================================
 
 const seender = 'Brodcast + Sender -> {sender}.';
 const server = 'Brodcast + server -> {server}.';
@@ -564,9 +575,8 @@ client.on('message', message => {
  }
  });
 
+// ==================================================================
 
-
-//report
   client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/report')) {
@@ -595,7 +605,8 @@ client.on('message', message => {
   }
   });
 
-//FeedBack
+// ==================================================================
+
 client.on("message", message => {
     let args = message.content.split(" ").slice(1);
   if (message.content.startsWith('/feedback')) {
@@ -623,8 +634,8 @@ client.on("message", message => {
   }
   });
 
+// ==================================================================
 
-//move
 client.on('message',message => {
 if(!message.channel.guild) return;
     var prefix1 = "/";
@@ -654,6 +665,8 @@ message.channel.send("**:x:  User must be in voice channel **")
 message.react("❌")
  }}})
 
+// ==================================================================
+
 client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
@@ -662,6 +675,7 @@ client.on('message', message=> {
     }
 });
 
+// ==================================================================
 
 client.on('guildMemberAdd', member => {
   let channel = member.guild.channels.find(x => x.name === '☆welcome☆');
@@ -687,8 +701,7 @@ Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take
     channel.sendEmbed(embed);
 });
 
-
-
+// ==================================================================
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
@@ -696,6 +709,7 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
+// ==================================================================
 
 client.on('message', msg => {
 
@@ -707,6 +721,7 @@ client.on('message', msg => {
 
 });
 
+// ==================================================================
 
 client.on('message', msg => {
  	var prefix = "/";
@@ -733,6 +748,7 @@ client.on('message', msg => {
  }
  });
 
+// ==================================================================
 
 client.on('message', msg => {
   if (msg.author.bot) return;
@@ -758,6 +774,7 @@ client.on('message', msg => {
 }
 });
      
+// ==================================================================
 
 client.on("message", (message) => {
 if (message.content.startsWith("/ct")) {
@@ -770,6 +787,7 @@ message.channel.sendMessage(`The Text Room Was Created \`${args.join(' ')}\``)
 }
 });
 
+// ==================================================================
 
 client.on("message", (message) => {
 if (message.content.startsWith("/cv")) {
@@ -782,7 +800,7 @@ if(!args.join(" ")) return message.reply(`**${prefix}cv <Name Channel>**`).then(
 }
 });
 
-
+// ==================================================================
 
 client.on('message', message => {
  var prefix = "/";
@@ -811,6 +829,7 @@ client.on('message', message => {
         
  });
 
+// ==================================================================
 
 client.on('message', async message =>{
   var prefix = "/";
@@ -860,6 +879,9 @@ setTimeout(function(){
  
  
   }
+	
+// ==================================================================
+
 if(command === `unmute`) {
   if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.sendMessage("**ليس لديك صلاحية لفك عن الشخص ميوت**:x: ").then(m => m.delete(5000));
 if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**I Don't Have `MANAGE_ROLES` Permission**").then(msg => msg.delete(6000))
@@ -880,6 +902,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
  
 });
 
+// ==================================================================
 
 client.on('message', message => {
 	var command = message.content.toLowerCase().split(" ")[0];
@@ -948,6 +971,9 @@ if(null == message.guild || !message.guild) return;
 			})
 		}, ms(time))
 	}
+	
+// ==================================================================
+
 	if(command == prefix + 'unban') {
 		
 		 if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!'); 
@@ -976,8 +1002,7 @@ if(null == message.guild || !message.guild) return;
 	}
 });
 
-
-
+// ==================================================================
 
 client.on('message', message => {
  	var prefix = "/"
@@ -1017,6 +1042,7 @@ client.on('message', message => {
  }
  });
 
+// ==================================================================
 
 client.on("message", message => {
   let men = message.mentions.users.first();
@@ -1044,6 +1070,7 @@ client.on("message", message => {
   }
 });
 
+// ==================================================================
 
 client.on("message", (message) => {
     if (message.content.startsWith('/delet')) {
@@ -1055,6 +1082,8 @@ client.on("message", (message) => {
         channel.delete()
     }
 });
+
+// ==================================================================
 
 
 client.on('message', message => {
@@ -1086,11 +1115,13 @@ if(!message.channel.guild) return message.reply(':no_entry: | This Command For S
 
 });
 
+// ==================================================================
 
  client.on('ready', () => {
- 	console.log('I am Ready For Fight !'); 
+ 	console.log('I am Ready To Fight !'); 
    });
 
+// ==================================================================
 
 
 client.on('message', message => {
@@ -1101,8 +1132,10 @@ client.on('message', message => {
   command = command.slice(prefix.length);
 
   let args = message.content.split(" ").slice(1);
+	
   
- 
+ // ==================================================================
+
 
 if (command == "say") {
     let say = new Discord.RichEmbed()
@@ -1115,6 +1148,7 @@ if (command == "say") {
 
 });
 
+// ==================================================================
 
  client.on('message',async message => {
     if(message.content.startsWith(prefix + "restart")) {
@@ -1136,6 +1170,7 @@ if (command == "say") {
     }
 });
   
+// ==================================================================
 
 client.on('message', eyad => {
   if (eyad.content.startsWith('/vb')) {
@@ -1168,6 +1203,7 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(10000)})
     }
 })
 
+// ==================================================================
 
 client.on('message', eyad => {
   if (eyad.content.startsWith('/unvb')) {
@@ -1201,6 +1237,8 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(15000)})
     }
 })
 
+// ==================================================================
+
 
 client.on('message', message => {
     if (message.content.startsWith(prefix + "avatar")) {
@@ -1219,6 +1257,7 @@ client.on('message', message => {
     }
 });
 
+// ==================================================================
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -1243,6 +1282,8 @@ client.on('message', message => {
        }
    });
 
+// ==================================================================
+
     client.on('voiceStateUpdate', (old, now) => {
     const channel = client.channels.get('542094021699436551');
     const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
@@ -1250,6 +1291,8 @@ client.on('message', message => {
     if (!size) return channel.setName(`Voice Online : 「${currentSize}」`);
     if (currentSize !== size) channel.setName(`Voice Online : 「${currentSize}」`);
 });
+
+// ==================================================================
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -1272,6 +1315,8 @@ client.on('message', message => {
        }
    });
 
+// ==================================================================
+
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-rinzler") {
@@ -1292,6 +1337,8 @@ client.on('message', message => {
 	   
        }
    });
+
+// ==================================================================
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -1327,6 +1374,8 @@ message.author.sendEmbed(embed)
   }
 });
 
+// ==================================================================
+
 client.on('message', async message => {
   if(message.content.startsWith(prefix + "wr")) {
   if(message.author.id !== "480540559233122324") return message.reply('** :x: You Aren\'t The Bot Owner ! :x:**');
@@ -1348,4 +1397,13 @@ client.on('ready', () => {
  
  });
 
+// ==================================================================
+
 client.login(process.env.BOT_TOKEN);
+
+// ==================================================================
+
+ // THIS BOT [C.L.U] CREATED BY [THE RARE RANGER] - 2019© //
+////////////// 🔰 THE DAMNATION™ & THE GRID™ 🔰 //////////////
+
+// ==================================================================
