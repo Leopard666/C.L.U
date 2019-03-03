@@ -116,8 +116,12 @@ client.on('message', message => {
     })
 }
 });    
+
+// ================================================================
 	    
 	    
+
+
 // ================================================================
 
 client.on('guildCreate', guild => {
@@ -150,8 +154,8 @@ client.on('message', message => {
   .setDescription(`** 
   :tools: ● /STATS - /SERVER - /RESTART - /MEMBERS - /ID - /USERINFO - /NEWS - /BC - /BAN - /LOCK - /CLEAR - /WR  - /VKICK ● :tools:**`)
   .setTimestamp()
-  .addField('**BOT - VERSION** :robot: :' , `[ 3.0 ]`)
-  .addField('**BOT - OWNER** 👑 :' , `[<@480540559233122324>]`)
+  .addField('**● BOT - VERSION** :robot: :' , `**[ 3.0 ]**`)
+  .addField('**● BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
      message.channel.sendEmbed(embed);
 	   
        }
@@ -201,8 +205,8 @@ var embed  = new Discord.RichEmbed()
 .addField("** 🔐 Roles :**",`**[${message.guild.roles.size}]** Role `,true)
 .setColor('RANDOM')
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
-.addField('**:robot: BOT - VERSION :**' , `[ 3.0 ]`)
-.addField('**👑 BOT - OWNER :**' , `[<@480540559233122324>]`)
+.addField('**:robot: BOT - VERSION :**' , `**[ 3.0 ]**`)
+.addField('**👑 BOT - OWNER :**' , `**[ <@480540559233122324> ]**`)
 .setTimestamp()
 message.channel.sendEmbed(embed)
 
