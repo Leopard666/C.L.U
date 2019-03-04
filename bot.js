@@ -44,7 +44,7 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
-var version = '2.0';
+var version = '3.0';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "C.L.U IS BACK ONLINE NOW")) {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
@@ -54,7 +54,7 @@ client.on('message', message => {
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
-	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
+	    .addField('``Bot Version :``' , `[ v3.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ], true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
@@ -62,10 +62,10 @@ client.on('message', message => {
             .addField('``TG - Servers :``', [ client.guilds.size ] , true)
             .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
-	    .addField('``TG Server Region :``' , [ `Eu - Central` ] , true)
-            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
+	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
+            .addField('``Bot Name :``' , `[ ${client.user.tag} ]`, true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
-            .addField('``Bot Node :``' , `[${process.version} ]` , true)
+            .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
                   .addField('``Bot Prefix :``' , `👑 [ FOR ADMINS ] 👑` , true)
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
@@ -189,7 +189,7 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
-var version = '2.0';
+var version = '3.0';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "stats")) {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(5000));
@@ -198,9 +198,9 @@ client.on('message', message => {
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
             .setTitle('**[C.L.U] STATS** ')
-	    .addField('``Bot Version :``' , `[ v2.0 ]` , true)
+	    .addField('``Bot Version :``' , `[ v3.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
-	    .addField('``TG Server Region :``' , [ `Eu - Central` ] , true)
+	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
             .addField('``Bot Ping :``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]` , true)
@@ -1361,7 +1361,7 @@ client.on('message', message => {
   .setThumbnail(client.user.avatarURL)
   .setColor('RANDOM')
   .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰') 
-  .addField('● QUORRA - VERSION :robot: :' , `**[ v1.3 ]**`)
+  .addField('● QUORRA - VERSION :robot: :' , `**[ v2.0 ]**`)
   .addField('● QUORRA - CMD :keyboard: :' , `**$help**`)
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
   .setTimestamp()
