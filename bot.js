@@ -1117,24 +1117,27 @@ if (command == "say") {
 
 // ==================================================================
 
- client.on('message',async message => {
-    if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**').then(m => m.delete(60000));
-        message.channel.send('**Restarting.**').then(msg => {
+client.on('message', message => {
+    if(message.content === prefix + "restart") {
+	     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
+          client.channels.get("552138170012008469").send({
+	     embed: new Discord.RichEmbed()
+	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('YELLOW')
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [C.L.U] IS OFFLINE NOW !** ')
+	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+		 });
+	    console.log(`${message.author.tag} [ ${message.author.id} ] C.L.U Has Restarted Successfully.`);
+            console.log(`C.L.U Is Restarting Now..`);
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: C.L.U IS Restarting..**').then(m => m.delete(5000));
-            },1000);
-            setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: C.L.U IS Restarting...**').then(m => m.delete(5000));
-            },2000);
-        });
-        console.log(`${message.author.tag} [ ${message.author.id} ] C.L.U Has Restarted Successfully.`);
-        console.log(`Restarting..`);
-        setTimeout(() => {
             client.destroy();
             client.login(process.env.BOT_TOKEN);
-        },3000);
-    }
+            },3000);
+
+}
 });
   
 // ==================================================================
