@@ -87,6 +87,28 @@ client.channels.get("552138170012008469").send("/C.L.U IS BACK ONLINE NOW").then
 
 // ================================================================
 
+ client.on('message', message => {
+    if(message.content === prefix + "shutdown") {
+	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
+            client.channels.get("552138170012008469").send({
+	    embed: new Discord.RichEmbed()
+	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('dc322f')
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [C.L.U] IS SHUTDOWN NOW BY THE OWNERS !**')
+	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+		    });
+            console.log(`${message.author.tag} [ ${message.author.id} ] C.L.U Has ShutDown Successfully.`);
+            setTimeout(() => {
+            client.destroy();
+            },3000);
+}
+});    
+
+// ==================================================================
+
 client.on('guildCreate', guild => {
     var embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
@@ -115,7 +137,7 @@ client.on('message', message => {
   .setTitle(`**:beginner: [❖══ ● C.L.U SYSTEM BOT ● ══❖] :beginner:**`)
   .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
   .setDescription(`** 
-  :tools: ● /STATS - /SERVER - /RESTART - /MEMBERS - /ID - /USERINFO - /NEWS - /BC - /BAN - /LOCK - /CLEAR - /WR  - /VKICK ● :tools:**`)
+  :tools: ● /STATS - /SERVER - /RESTART - /SHUTDOWN - /MEMBERS - /ID - /USERINFO - /NEWS - /BC - /BAN - /LOCK - /CLEAR - /WR  - /VKICK ● :tools:**`)
   .setTimestamp()
   .addField('**● BOT - VERSION** :robot: :' , `**[ 3.0 ]**`)
   .addField('**● BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
@@ -248,7 +270,9 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   if (oldMember.id === (process.env.BOT_ID || config.listen_bot_id)) {
     let oldStatus = oldMember.presence.status;
     let newStatus = newMember.presence.status;
-
+	  
+	  
+	  
     if (oldStatus == 'dnd' && newStatus === 'offline') {
       timeSinceOffline = Date.now();
         messageChannel.send({
@@ -258,9 +282,8 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 	    .setTimestamp()
             .setTitle('**● :robot: [QUORRA] IS OFFLINE NOW !** ')
 	    .setDescription(`
-
 ● Attention **[ THE GRID™ ]** Bot Users **[ QUORRA ]** Has Gone :
-**[ Offline ]** 
+**[ Offline ]**  
 
 ● If The Bot Has Gone Unexpected Offline, It Could Be 1 Of The Following Errors :
 
@@ -270,15 +293,38 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 ● I will post a message in this channel once the bot comes back online so keep checking in this channel or check the user list.
 
-● In the meantime I have notified **[ The Rare Ranger ]** that the bot has gone offline.`)    
-					    
+● In the meantime I have notified **[ The Rare Ranger ]** that the bot has gone offline.`)
+		
    })
       } 
   }   
-});
+});  
+
+client.on('presenceUpdate', (oldMember, newMember) => {	
+  if (oldMember.id === (process.env.BOT_ID || config.listen_bot_id)) {
+   let oldStatus = oldMember.presence.status;
+    let newStatus = newMember.presence.status;
+	
+    if ((oldStatus !== 'online') && newStatus === 'online') {
+	    if (timeSinceOffline) {
+	    let offlineTime = Date.now() - timeSinceOffline;
+             timeSinceOffline = Date.now();
+             messageChannel.send({
+	     embed: new Discord.RichEmbed()
+            .setColor('859900')
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [QUORRA] IS BACK ONLINE NOW !** ')
+	    .setDescription(`
+● Attention **[The Grid™]** Users **[QUORRA]** Has Returned From The Darkness Aka Back **Online** It Must Be Your Lucky Day ! ●`)
+		
+   })
+      } 
+  }   
+} 
+}); 
 
 client.login(process.env.DISCORD_TOKEN || config.discord_token);
-
 function displayTime(millis) {
   const totalTime = Math.floor(millis / 1000);
   const days = Math.floor(totalTime / 86400);
