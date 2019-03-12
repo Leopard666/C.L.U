@@ -28,6 +28,8 @@ const stripIndents = require('common-tags').stripIndents;
 const figlet = require('figlet');
 const client = new Discord.Client();
 const prefix = '/'
+let cooldown = new Set();
+let cdseconds = 5;
 ti={}  
 spee={};
 
