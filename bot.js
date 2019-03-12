@@ -1365,9 +1365,15 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-clu") {
+      if(!message.content.startsWith(prefix)) return;
+         if(cooldown.has(message.author.id)){
+    message.delete();
+    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+ // }          
    if(!message.channel.guild) return message.reply(':no_entry: | This Command For Owners Only!').then(m => m.delete(60000));
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You Dont Have **MANAGE_MESSAGES** Permission!').then(m => m.delete(60000));
-
    message.channel.send('** :beginner:  [❖══ ● C.L.U SYSYTEM BOT ● ══❖] :beginner:  **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(client.user.username,client.user.avatarURL)
@@ -1383,6 +1389,11 @@ client.on('message', message => {
      message.channel.sendEmbed(embed);
 	   
        }
+	
+    setTimeout(() => {
+    cooldown.delete(message.author.id)
+  }, cdseconds * 1000)
+	
    });
 
 // ==================================================================
@@ -1400,7 +1411,14 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-quorra") {
-    
+      if(!message.content.startsWith(prefix)) return;
+         if(cooldown.has(message.author.id)){
+    message.delete();
+    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+ // }    
    message.channel.send('**:one: : :rainbow: [❖══ ● QUORRA RIANBOW BOT ● ══❖] :rainbow: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(client.user.username,client.user.avatarURL)
@@ -1414,8 +1432,14 @@ client.on('message', message => {
   .setTitle(`**:arrow_right: :link: Click Here To Invite Quorra RainBow Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541430895328886785&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed)
-
-       }
+	   
+     }
+	
+    setTimeout(() => {
+    cooldown.delete(message.author.id)
+  }, cdseconds * 1000)   
+	   
+      
    });
 
 // ==================================================================
@@ -1423,7 +1447,14 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite-rinzler") {
-    
+      if(!message.content.startsWith(prefix)) return;
+         if(cooldown.has(message.author.id)){
+    message.delete();
+    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+ // }    
    message.channel.send('**:two: : :headphones: [❖══ ● RINZLER MUSIC BOT ● ══❖] :headphones: **').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(client.user.username,client.user.avatarURL)
@@ -1437,8 +1468,13 @@ client.on('message', message => {
   .setTitle(`**:arrow_right: :link: Click Here To Invite Rinzler Music Bot :link: :arrow_left:**`)
   .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541446177384693760&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed)
-	   
+   
        }
+	
+    setTimeout(() => {
+    cooldown.delete(message.author.id)
+  }, cdseconds * 1000)
+	
    });
 
 // ==================================================================
@@ -1446,7 +1482,14 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "invite") {
-    
+      if(!message.content.startsWith(prefix)) return;
+         if(cooldown.has(message.author.id)){
+    message.delete();
+    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+ // }     
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
@@ -1474,7 +1517,12 @@ client.on('message', message => {
 
 message.author.sendEmbed(embed)
 
+    setTimeout(() => {
+    cooldown.delete(message.author.id)
+  }, cdseconds * 1000)
+	   
   }
+	
 });
 
 // ==================================================================
