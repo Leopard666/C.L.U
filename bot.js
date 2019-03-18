@@ -89,6 +89,17 @@ client.channels.get("552138170012008469").send("/C.L.U IS BACK ONLINE NOW").then
 
 // ================================================================
 
+client.on('message', message => {
+  if(message.content ===  prefix + 'leaveserver') {
+	     message.channel.send('**:white_check_mark: ● Done - Now Im Gonna Go Back To My HQ , Cya ● **').then(m => m.delete(60000));
+       if (message.author.id !== "480540559233122324") return;
+  message.guild.leave();
+	  
+  }
+})
+
+// ================================================================
+
  client.on('message', message => {
     if(message.content === prefix + "shutdown") {
 	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
