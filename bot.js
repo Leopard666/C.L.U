@@ -161,7 +161,8 @@ client.on('message', message => {
 
 // ==================================================================
 
-client.on('ready', function(){//npm i ms 
+client.on('ready', function(){
+    client.user.setStatus("dnd");
     var ms = 10000 ;
     var setGame = [`★ TG™ | SYSTEM ★`,`★ TG™ USERS : [${client.users.size}] ★`,`★ THE GRID™ ★`];
     var i = -1;
