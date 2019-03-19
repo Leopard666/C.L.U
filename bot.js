@@ -1399,7 +1399,7 @@ client.on('message', message => {
   .addField('● C.L.U - CMD :keyboard: :' , `**/help**`) 
   .addField('● BOT - OWNER 👑 :' , `**[ <@480540559233122324> ]**`)
   .setTitle(`**:beginner: :link: Click Here To Invite C.L.U System Bot :link: :beginner:**`)
-  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=541454401152483328&permissions=8&scope=bot`)
+  .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=&permissions=8&scope=bot`)
      message.channel.sendEmbed(embed);
 	   
        }
