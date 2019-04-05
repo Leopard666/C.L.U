@@ -681,9 +681,9 @@ client.on('message', message => {
  var bc = new
  Discord.RichEmbed()
  .setColor('RANDOM')
- .setFooter('📢|TG™ - BroadCast|📢')
- .addField('🔰السيرفر🔰', message.guild.name)
- .addField('🚩المرسل🚩', message.author.username)
+ .setFooter('📢 | TG™ - BroadCast | 📢')
+ .addField('🔰 | السيرفر 🔰 | :', message.guild.name)
+ .addField('🚩 | المرسل 🚩 | :', message.author.username)
  .setDescription(EmbedRep)
  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
  .setTimestamp()
@@ -819,7 +819,7 @@ client.on('guildMemberAdd', member => {
 Welcome ${member} To **The Grid™ - Official**  Server , Please Be Sure To take a look At The Rules in **#read-me** Additional Details Can Be Found In **#announcements** . Our Support Team Is Here And Happy To Help You If You Have Any **Questions Regarding The Grid™**, Enjoy Your Stay ♥.
 💎・。・゜★・。・。☆・゜・。・゜。・。・゜★・💎`)
       .addField('• 🆔 | User ID » ', "**[" + `${member.id}` + "]**" )
-              .addField('• ➡ | You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
+              .addField('• :1234: | You Are Number » ', "**[" + `${member.guild.memberCount}` + "]**")                     
                                    .addField('• 🔮 | Server Name » ', `**${member.guild.name}**`, true)
   .addField('• 🕣 | Time Create » ', member.user.createdAt.toLocaleString(), true)
 
