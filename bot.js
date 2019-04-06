@@ -91,8 +91,8 @@ client.on('message', message => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
-	          .setDescription(`**:robot: ● Attention [The Grid™] Users 
-[C.L.U] Has Returned From The Darkness Aka Back Online
+	          .setDescription(`**:robot: ● Attention [ THE GRID™ ] Users 
+[ C.L.U ] Has Returned From The Darkness Aka Back Online
 It Must Be Your Lucky Day ! ● ** `)
 
     })
@@ -363,7 +363,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 	    .setTimestamp()
             .setTitle('**● :robot: [QUORRA] IS BACK ONLINE NOW !** ')
 	    .setDescription(`
-● Attention **[The Grid™]** Users **[QUORRA]** Has Returned From The Darkness Aka Back **Online** It Must Be Your Lucky Day ! ●`)
+● Attention **[ THE GRID™ ]** Users **[ QUORRA ]** Has Returned From The Darkness Aka Back **Online** It Must Be Your Lucky Day ! ●`)
 		
    })
       } 
@@ -394,7 +394,7 @@ function updatePresence(member) {
   client.user.setPresence({
     game: {
       name: `${listenBotName}`,
-      type: 'LISTENING'
+      type: 'LISTENING TO'
     }
   });
 }
