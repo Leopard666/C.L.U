@@ -35,6 +35,24 @@ spee={};
 
 // ================================================================
 
+////////////////// [ 🔰 CONSOL C.L.U LOGS 🔰 ] //////////////////
+
+client.on('warn', console.warn);
+
+client.on('error', console.error);
+
+client.on('disconnect', () => console.log('🔰 I Just Disconnected, Making Sure You Know, I Will Reconnect Now... 🔰'));
+
+client.on('reconnecting', () => console.log('🔰 I Am Reconnecting Now ! 🔰'));
+
+client.on('ready', function() {
+
+    console.log(`🔰 [ ${client.user.username} ] : IS READY TO FIGHT NOW 🔰`);
+
+});
+
+// ==================================================================
+
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
     let hours = Math.floor(time % 31536000 % 86400 / 3600)
@@ -57,15 +75,15 @@ client.on('message', message => {
             .setColor('859900')
             .setTitle('**🚀 [C.L.U] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
 	    .addField('``Bot Version :``' , `[ v3.0 ]` , true)
-	    .addField('``Bot Name :``' , `★ C.L.U - 2077 ★` , true)
+	    .addField('``Bot Full Name :``' , `★ C.L.U - 2077 ★` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ], true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
             .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]` , true)
-            .addField('``TG - Servers :``', [ client.guilds.size ] , true)
-            .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
-            .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
-	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
+            .addField('``TG™ - Servers :``', [ client.guilds.size ] , true)
+            .addField('``TG™ - Channels :``' , `[ ${client.channels.size} ]` , true)
+            .addField('``TG™ - Users :``' ,`[ ${client.users.size} ]` , true)
+	    .addField('``TG™ - Server Region :``' , `[ Eu - Central ]` , true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]`, true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
@@ -250,14 +268,14 @@ client.on('message', message => {
             .setTitle('**[C.L.U] STATS** ')
 	    .addField('``Bot Version :``' , `[ v3.0 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
-	    .addField('``Bot Name :``' , `★ C.L.U - 2077 ★` , true)
-	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
+	    .addField('``Bot Full Name :``' , `★ C.L.U - 2077 ★` , true)
+	    .addField('``TG™ Server Region :``' , `[ Eu - Central ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
             .addField('``Bot Ping :``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]` , true)
-            .addField('``TG - Servers :``', [ client.guilds.size ] , true)
-            .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
-            .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
+            .addField('``TG™ - Servers :``', [ client.guilds.size ] , true)
+            .addField('``TG™ - Channels :``' , `[ ${client.channels.size} ]` , true)
+            .addField('``TG™ - Users :``' ,`[ ${client.users.size} ]` , true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
